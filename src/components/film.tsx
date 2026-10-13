@@ -68,8 +68,6 @@ export function Film({
         )}
         <video
           ref={video}
-          src={loaded ? film.src : undefined}
-          poster={loaded ? film.poster : undefined}
           preload="none"
           muted
           playsInline
@@ -87,6 +85,7 @@ export function Film({
           onError={() => {
             setFailed(true);
             setPlaying(false);
+            setWaiting(false);
           }}
           aria-label={`${label}. Silent licensed stock footage; illustrative studio concept.`}
         />
