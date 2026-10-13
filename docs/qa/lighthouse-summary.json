@@ -1,12 +1,12 @@
 {
-  "environment": "Local production build; Lighthouse mobile simulation",
-  "scores": {
-    "performance": 88,
+  "url": "http://localhost:3109/",
+  "categories": {
+    "performance": 90,
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100
   },
-  "lcp": "3.8 s",
-  "tbt": "90 ms",
+  "lcp": "3.7 s",
+  "tbt": "10 ms",
   "cls": "0"
 }

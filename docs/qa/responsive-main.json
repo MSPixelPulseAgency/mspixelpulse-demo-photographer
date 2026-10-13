@@ -1,466 +1,674 @@
-{
-  "home": [
-    {
-      "h1": 262.3125,
-      "overflow": false,
-      "scroll": 305,
-      "width": 320
-    },
-    {
-      "h1": 309.609375,
-      "overflow": false,
-      "scroll": 360,
-      "width": 375
-    },
-    {
-      "h1": 322.5,
-      "overflow": false,
-      "scroll": 375,
-      "width": 390
-    },
-    {
-      "h1": 356.90625,
-      "overflow": false,
-      "scroll": 415,
-      "width": 430
-    },
-    {
-      "h1": 673.9453125,
-      "overflow": false,
-      "scroll": 753,
-      "width": 768
-    },
-    {
-      "h1": 903.0625,
-      "overflow": false,
-      "scroll": 1009,
-      "width": 1024
-    },
-    {
-      "h1": 1132.1875,
-      "overflow": false,
-      "scroll": 1265,
-      "width": 1280
-    },
-    {
-      "h1": 1275.375,
-      "overflow": false,
-      "scroll": 1425,
-      "width": 1440
-    },
-    {
-      "h1": 1704.984375,
-      "overflow": false,
-      "scroll": 1905,
-      "width": 1920
-    }
-  ],
-  "mainPages": [
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/portfolio",
-      "unlabelled": 0,
-      "width": 320
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/portfolio",
-      "unlabelled": 0,
-      "width": 390
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/portfolio",
-      "unlabelled": 0,
-      "width": 768
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/portfolio",
-      "unlabelled": 0,
-      "width": 1440
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/services",
-      "unlabelled": 0,
-      "width": 320
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/services",
-      "unlabelled": 0,
-      "width": 390
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/services",
-      "unlabelled": 0,
-      "width": 768
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/services",
-      "unlabelled": 0,
-      "width": 1440
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/about",
-      "unlabelled": 0,
-      "width": 320
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/about",
-      "unlabelled": 0,
-      "width": 390
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/about",
-      "unlabelled": 0,
-      "width": 768
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/about",
-      "unlabelled": 0,
-      "width": 1440
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/experience",
-      "unlabelled": 0,
-      "width": 320
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/experience",
-      "unlabelled": 0,
-      "width": 390
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/experience",
-      "unlabelled": 0,
-      "width": 768
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/experience",
-      "unlabelled": 0,
-      "width": 1440
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/investment",
-      "unlabelled": 0,
-      "width": 320
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/investment",
-      "unlabelled": 0,
-      "width": 390
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/investment",
-      "unlabelled": 0,
-      "width": 768
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/investment",
-      "unlabelled": 0,
-      "width": 1440
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/journal",
-      "unlabelled": 0,
-      "width": 320
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/journal",
-      "unlabelled": 0,
-      "width": 390
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/journal",
-      "unlabelled": 0,
-      "width": 768
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/journal",
-      "unlabelled": 0,
-      "width": 1440
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/contact",
-      "unlabelled": 0,
-      "width": 320
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/contact",
-      "unlabelled": 0,
-      "width": 390
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/contact",
-      "unlabelled": 0,
-      "width": 768
-    },
-    {
-      "h1": 1,
-      "overflow": false,
-      "route": "/contact",
-      "unlabelled": 0,
-      "width": 1440
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/portfolio",
-      "width": 375
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/portfolio",
-      "width": 430
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/portfolio",
-      "width": 1024
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/portfolio",
-      "width": 1280
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/portfolio",
-      "width": 1920
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/services",
-      "width": 375
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/services",
-      "width": 430
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/services",
-      "width": 1024
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/services",
-      "width": 1280
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/services",
-      "width": 1920
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/about",
-      "width": 375
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/about",
-      "width": 430
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/about",
-      "width": 1024
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/about",
-      "width": 1280
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/about",
-      "width": 1920
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/experience",
-      "width": 375
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/experience",
-      "width": 430
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/experience",
-      "width": 1024
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/experience",
-      "width": 1280
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/experience",
-      "width": 1920
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/investment",
-      "width": 375
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/investment",
-      "width": 430
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/investment",
-      "width": 1024
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/investment",
-      "width": 1280
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/investment",
-      "width": 1920
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/journal",
-      "width": 375
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/journal",
-      "width": 430
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/journal",
-      "width": 1024
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/journal",
-      "width": 1280
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/journal",
-      "width": 1920
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/contact",
-      "width": 375
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/contact",
-      "width": 430
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/contact",
-      "width": 1024
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/contact",
-      "width": 1280
-    },
-    {
-      "headingsClipped": 0,
-      "overflow": false,
-      "route": "/contact",
-      "width": 1920
-    }
-  ]
-}
+[
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/",
+    "width": 320
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/portfolio",
+    "width": 320
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/services",
+    "width": 320
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/about",
+    "width": 320
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/experience",
+    "width": 320
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/investment",
+    "width": 320
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/journal",
+    "width": 320
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/contact",
+    "width": 320
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/",
+    "width": 375
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/portfolio",
+    "width": 375
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/services",
+    "width": 375
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/about",
+    "width": 375
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/experience",
+    "width": 375
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/investment",
+    "width": 375
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/journal",
+    "width": 375
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/contact",
+    "width": 375
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/",
+    "width": 390
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/portfolio",
+    "width": 390
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/services",
+    "width": 390
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/about",
+    "width": 390
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/experience",
+    "width": 390
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/investment",
+    "width": 390
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/journal",
+    "width": 390
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/contact",
+    "width": 390
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/",
+    "width": 430
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/portfolio",
+    "width": 430
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/services",
+    "width": 430
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/about",
+    "width": 430
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/experience",
+    "width": 430
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/investment",
+    "width": 430
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/journal",
+    "width": 430
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/contact",
+    "width": 430
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/",
+    "width": 768
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/portfolio",
+    "width": 768
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/services",
+    "width": 768
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/about",
+    "width": 768
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/experience",
+    "width": 768
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/investment",
+    "width": 768
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/journal",
+    "width": 768
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/contact",
+    "width": 768
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/",
+    "width": 1024
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/portfolio",
+    "width": 1024
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/services",
+    "width": 1024
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/about",
+    "width": 1024
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/experience",
+    "width": 1024
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/investment",
+    "width": 1024
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/journal",
+    "width": 1024
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [],
+    "overflow": false,
+    "route": "/contact",
+    "width": 1024
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/",
+    "width": 1280
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/portfolio",
+    "width": 1280
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/services",
+    "width": 1280
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/about",
+    "width": 1280
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/experience",
+    "width": 1280
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/investment",
+    "width": 1280
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/journal",
+    "width": 1280
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/contact",
+    "width": 1280
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/",
+    "width": 1440
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/portfolio",
+    "width": 1440
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/services",
+    "width": 1440
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/about",
+    "width": 1440
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/experience",
+    "width": 1440
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/investment",
+    "width": 1440
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/journal",
+    "width": 1440
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/contact",
+    "width": 1440
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/",
+    "width": 1920
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/portfolio",
+    "width": 1920
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/services",
+    "width": 1920
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/about",
+    "width": 1920
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/experience",
+    "width": 1920
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/investment",
+    "width": 1920
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/journal",
+    "width": 1920
+  },
+  {
+    "clippedHeadings": 0,
+    "nav": [
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px",
+      "18px"
+    ],
+    "overflow": false,
+    "route": "/contact",
+    "width": 1920
+  }
+]
