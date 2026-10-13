@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { stories } from "@/data/site";
 import { Picture, CTA } from "@/components/ui";
-import { Gallery } from "@/components/interactions";
+import { Gallery } from "@/components/gallery";
 export function generateStaticParams() {
   return stories.map((s) => ({ slug: s.slug }));
 }
@@ -54,7 +54,7 @@ export default async function Story({
       </section>
       <section className="section next-story">
         <span className="eyebrow">The next chapter</span>
-        <Link href={"/portfolio/" + next.slug}>
+        <Link prefetch={false} href={"/portfolio/" + next.slug}>
           <h2>{next.title} ↗</h2>
         </Link>
       </section>

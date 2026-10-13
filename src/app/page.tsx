@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Picture, Action, Heading, CTA } from "@/components/ui";
-import { Reel } from "@/components/interactions";
+import { Reel } from "@/components/reel";
 import { stories, services } from "@/data/site";
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
             <Action href="/portfolio" light>
               Explore the portfolio
             </Action>
-            <Link className="text-link" href="/contact">
+            <Link prefetch={false} className="text-link" href="/contact">
               Inquire now <ArrowUpRight size={17} />
             </Link>
           </div>
@@ -87,6 +87,7 @@ export default function Home() {
         <div className="story-grid">
           {stories.slice(0, 3).map((s, i) => (
             <Link
+              prefetch={false}
               href={"/portfolio/" + s.slug}
               className="story-card reveal"
               key={s.slug}
@@ -126,7 +127,11 @@ export default function Home() {
         </div>
         <div className="service-list">
           {services.map((s) => (
-            <Link href={"/services#service-" + s.number} key={s.title}>
+            <Link
+              prefetch={false}
+              href={"/services#service-" + s.number}
+              key={s.title}
+            >
               <small>{s.number}</small>
               <h3>{s.title}</h3>
               <ArrowUpRight size={23} />
@@ -159,6 +164,7 @@ export default function Home() {
         <div className="duo-grid">
           {stories.slice(4, 6).map((s) => (
             <Link
+              prefetch={false}
               className="story-card reveal"
               href={"/portfolio/" + s.slug}
               key={s.slug}
@@ -275,7 +281,7 @@ export default function Home() {
             "white-floral-table",
             "engagement-embrace",
           ].map((n) => (
-            <Link href="/portfolio" key={n}>
+            <Link prefetch={false} href="/portfolio" key={n}>
               <Picture name={n} />
             </Link>
           ))}
@@ -317,7 +323,9 @@ export default function Home() {
         <div className="diary-label">
           <span className="eyebrow">The visual diary</span>
           <span>A little inspiration, frame by frame.</span>
-          <Link href="/portfolio">See the collection ↗</Link>
+          <Link prefetch={false} href="/portfolio">
+            See the collection ↗
+          </Link>
         </div>
         <div className="diary-grid">
           {[
@@ -328,7 +336,7 @@ export default function Home() {
             "maternity-couple",
             "romantic-table-setting",
           ].map((n) => (
-            <Link href="/portfolio" key={n}>
+            <Link prefetch={false} href="/portfolio" key={n}>
               <Picture name={n} />
             </Link>
           ))}

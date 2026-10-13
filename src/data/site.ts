@@ -6,29 +6,8 @@ export const brand = {
   email: "hello@mspixelpulse.com",
   phone: "+1 (000) 000-0000",
 };
-export const nav = [
-  "Home",
-  "Portfolio",
-  "Services",
-  "About",
-  "Experience",
-  "Investment",
-  "Journal",
-  "Contact",
-];
-export const photo = (name: string) =>
-  name === "ari-fictional-photographer"
-    ? {
-        name,
-        id: "original-generated-ari",
-        alt: "Original generated editorial portrait of Ari, the fictional photographer, holding an unbranded camera",
-        src: "/images/ari-fictional-photographer.webp",
-        width: 1024,
-        height: 1536,
-        source: "",
-        license: "Original generated asset",
-      }
-    : (assets.find((a) => a.name === name) ?? assets[0]);
+export { nav } from "./navigation";
+export { photo } from "./media";
 export const categories = [
   "All",
   "Weddings",

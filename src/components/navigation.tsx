@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import { nav } from "@/data/site";
+import { nav } from "@/data/navigation";
 export default function Navigation() {
   const path = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -36,7 +36,12 @@ export default function Navigation() {
       <header
         className={`site-header ${path === "/" ? "on-hero" : ""} ${scrolled ? "scrolled" : ""}`}
       >
-        <Link href="/" className="wordmark" title="Aurel Frame home">
+        <Link
+          prefetch={false}
+          href="/"
+          className="wordmark"
+          title="Aurel Frame home"
+        >
           <span>
             AUREL <i>FRAME</i>
           </span>
@@ -45,6 +50,7 @@ export default function Navigation() {
         <nav aria-label="Main navigation">
           {nav.slice(1, -1).map((n) => (
             <Link
+              prefetch={false}
               key={n}
               href={"/" + n.toLowerCase()}
               aria-current={
@@ -55,7 +61,7 @@ export default function Navigation() {
             </Link>
           ))}
         </nav>
-        <Link href="/contact" className="header-inquire">
+        <Link prefetch={false} href="/contact" className="header-inquire">
           Inquire <ArrowUpRight size={15} />
         </Link>
         <button
@@ -85,6 +91,7 @@ export default function Navigation() {
         <nav aria-label="Mobile navigation">
           {nav.map((n, i) => (
             <Link
+              prefetch={false}
               key={n}
               href={i === 0 ? "/" : "/" + n.toLowerCase()}
               onClick={close}

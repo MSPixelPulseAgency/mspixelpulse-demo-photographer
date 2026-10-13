@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Link from "next/link";
 import Navigation from "@/components/navigation";
-import { Reveal } from "@/components/interactions";
+import { Reveal } from "@/components/reveal";
 import { brand, nav } from "@/data/site";
 import "./globals.css";
 const serif = Cormorant_Garamond({
@@ -50,7 +50,7 @@ export default function RootLayout({
         <footer>
           <div className="footer-main">
             <div>
-              <Link href="/" className="wordmark">
+              <Link prefetch={false} href="/" className="wordmark">
                 AUREL <i>FRAME</i>
               </Link>
               <p>Every Moment, Beautifully Remembered.</p>
@@ -60,7 +60,11 @@ export default function RootLayout({
             </div>
             <nav aria-label="Footer navigation">
               {nav.map((n, i) => (
-                <Link key={n} href={i === 0 ? "/" : "/" + n.toLowerCase()}>
+                <Link
+                  prefetch={false}
+                  key={n}
+                  href={i === 0 ? "/" : "/" + n.toLowerCase()}
+                >
                   {n}
                 </Link>
               ))}
@@ -84,8 +88,12 @@ export default function RootLayout({
           </div>
           <div className="footer-bottom">
             <span>© 2026 AUREL FRAME. An MSPixelPulse demo.</span>
-            <Link href="/privacy">Privacy & demo notice</Link>
-            <Link href="/credits">Image credits</Link>
+            <Link prefetch={false} href="/privacy">
+              Privacy & demo notice
+            </Link>
+            <Link prefetch={false} href="/credits">
+              Image credits
+            </Link>
           </div>
           <p className="disclosure">
             Fictional studio. Licensed stock imagery, illustrative collections

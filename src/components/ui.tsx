@@ -1,7 +1,7 @@
 /* Images use pre-generated local responsive WebP variants; no paid image service required. */
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { photo } from "@/data/site";
+import { photo } from "@/data/media";
 export function Picture({
   name,
   className = "",
@@ -44,7 +44,11 @@ export function Action({
   light?: boolean;
 }) {
   return (
-    <Link className={`action ${light ? "light" : ""}`} href={href}>
+    <Link
+      prefetch={false}
+      className={`action ${light ? "light" : ""}`}
+      href={href}
+    >
       {children}
       <ArrowUpRight size={17} aria-hidden />
     </Link>

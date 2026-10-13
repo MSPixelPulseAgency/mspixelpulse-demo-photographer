@@ -51,9 +51,19 @@ export default async function Article({
           </section>
         ))}
         <p>
-          Explore <Link href="/services">the photography services</Link>,
-          compare <Link href="/investment">illustrative collections</Link> or
-          walk through <Link href="/experience">the sample experience</Link>.
+          Explore{" "}
+          <Link prefetch={false} href="/services">
+            the photography services
+          </Link>
+          , compare{" "}
+          <Link prefetch={false} href="/investment">
+            illustrative collections
+          </Link>{" "}
+          or walk through{" "}
+          <Link prefetch={false} href="/experience">
+            the sample experience
+          </Link>
+          .
         </p>
       </article>
       <section className="section related">
@@ -62,7 +72,7 @@ export default async function Article({
           .filter((v) => v.slug !== slug)
           .slice(0, 2)
           .map((v) => (
-            <Link href={"/journal/" + v.slug} key={v.slug}>
+            <Link prefetch={false} href={"/journal/" + v.slug} key={v.slug}>
               <h3>{v.title} ↗</h3>
             </Link>
           ))}

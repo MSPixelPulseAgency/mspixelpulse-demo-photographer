@@ -115,6 +115,7 @@ export default async function Page({
           <section className="section story-grid portfolio-stories">
             {stories.map((s) => (
               <Link
+                prefetch={false}
                 href={"/portfolio/" + s.slug}
                 className="story-card"
                 key={s.slug}
@@ -328,6 +329,7 @@ export default async function Page({
         <section className="section journal-grid">
           {articles.map((a, i) => (
             <Link
+              prefetch={false}
               className="journal-card reveal"
               href={"/journal/" + a.slug}
               key={a.slug}
