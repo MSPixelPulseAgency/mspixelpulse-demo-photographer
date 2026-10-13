@@ -1,0 +1,642 @@
+[
+  {
+    "name": "floral-wedding-interior",
+    "id": "33104582",
+    "alt": "Floral wedding ceremony installation in a bright interior",
+    "src": "/images/floral-wedding-interior.webp",
+    "source": "https://www.pexels.com/photo/33104582/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "rustic-floral-wedding-setup",
+    "id": "37901024",
+    "alt": "Rustic floral wedding setting prepared for guests",
+    "src": "/images/rustic-floral-wedding-setup.webp",
+    "source": "https://www.pexels.com/photo/37901024/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1202
+  },
+  {
+    "name": "modern-reception-floral-corner",
+    "id": "17119948",
+    "alt": "Modern reception corner with floral styling",
+    "src": "/images/modern-reception-floral-corner.webp",
+    "source": "https://www.pexels.com/photo/17119948/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "outdoor-wedding-tent",
+    "id": "32854451",
+    "alt": "Elegant outdoor wedding tent in a green landscape",
+    "src": "/images/outdoor-wedding-tent.webp",
+    "source": "https://www.pexels.com/photo/32854451/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "south-asian-floral-stage",
+    "id": "34389342",
+    "alt": "Colourful South Asian floral wedding stage",
+    "src": "/images/south-asian-floral-stage.webp",
+    "source": "https://www.pexels.com/photo/34389342/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "garden-reception-lights",
+    "id": "12954016",
+    "alt": "Garden wedding reception glowing with string lights",
+    "src": "/images/garden-reception-lights.webp",
+    "source": "https://www.pexels.com/photo/12954016/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "garden-ceremony-aisle",
+    "id": "35279308",
+    "alt": "Green garden wedding aisle arranged for a ceremony",
+    "src": "/images/garden-ceremony-aisle.webp",
+    "source": "https://www.pexels.com/photo/35279308/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "indoor-wedding-arch",
+    "id": "34808252",
+    "alt": "Indoor wedding ceremony arch with floral details",
+    "src": "/images/indoor-wedding-arch.webp",
+    "source": "https://www.pexels.com/photo/34808252/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2520
+  },
+  {
+    "name": "woodland-wedding-ceremony",
+    "id": "14703685",
+    "alt": "Woodland wedding ceremony surrounded by trees",
+    "src": "/images/woodland-wedding-ceremony.webp",
+    "source": "https://www.pexels.com/photo/14703685/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1198
+  },
+  {
+    "name": "orchid-wedding-installation",
+    "id": "18530977",
+    "alt": "Sculptural orchid installation for a wedding",
+    "src": "/images/orchid-wedding-installation.webp",
+    "source": "https://www.pexels.com/photo/18530977/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1201
+  },
+  {
+    "name": "beach-wedding-vows",
+    "id": "12178589",
+    "alt": "Couple exchanging vows at a beach ceremony",
+    "src": "/images/beach-wedding-vows.webp",
+    "source": "https://www.pexels.com/photo/12178589/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "indian-wedding-ceremony",
+    "id": "12200848",
+    "alt": "Indian wedding ceremony with layered traditions",
+    "src": "/images/indian-wedding-ceremony.webp",
+    "source": "https://www.pexels.com/photo/12200848/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "sunset-beach-wedding",
+    "id": "35760200",
+    "alt": "Beach wedding ceremony at sunset",
+    "src": "/images/sunset-beach-wedding.webp",
+    "source": "https://www.pexels.com/photo/35760200/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "floral-reception-newlyweds",
+    "id": "32142686",
+    "alt": "Newlyweds at an elegant floral reception",
+    "src": "/images/floral-reception-newlyweds.webp",
+    "source": "https://www.pexels.com/photo/32142686/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1202
+  },
+  {
+    "name": "delhi-indian-wedding",
+    "id": "24334713",
+    "alt": "Indian wedding celebration with vibrant dress",
+    "src": "/images/delhi-indian-wedding.webp",
+    "source": "https://www.pexels.com/photo/24334713/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "south-asian-wedding-aisle",
+    "id": "27825199",
+    "alt": "South Asian wedding aisle with colourful florals",
+    "src": "/images/south-asian-wedding-aisle.webp",
+    "source": "https://www.pexels.com/photo/27825199/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "joyful-indian-wedding",
+    "id": "30215313",
+    "alt": "Joyful Indian wedding moment with family",
+    "src": "/images/joyful-indian-wedding.webp",
+    "source": "https://www.pexels.com/photo/30215313/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1198
+  },
+  {
+    "name": "pastel-wedding-reception",
+    "id": "37710440",
+    "alt": "Pastel reception room with soft floral styling",
+    "src": "/images/pastel-wedding-reception.webp",
+    "source": "https://www.pexels.com/photo/37710440/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "muslim-beach-wedding",
+    "id": "32579990",
+    "alt": "Muslim couple at a beach wedding ceremony",
+    "src": "/images/muslim-beach-wedding.webp",
+    "source": "https://www.pexels.com/photo/32579990/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "elegant-reception-couple",
+    "id": "32149797",
+    "alt": "Couple together at an elegant reception",
+    "src": "/images/elegant-reception-couple.webp",
+    "source": "https://www.pexels.com/photo/32149797/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "indian-wedding-ritual",
+    "id": "12718388",
+    "alt": "Close view of an Indian wedding ritual",
+    "src": "/images/indian-wedding-ritual.webp",
+    "source": "https://www.pexels.com/photo/12718388/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "formal-event-couple",
+    "id": "32147266",
+    "alt": "Elegantly dressed couple at a formal event",
+    "src": "/images/formal-event-couple.webp",
+    "source": "https://www.pexels.com/photo/32147266/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "chicago-loft-tablescape",
+    "id": "11434576",
+    "alt": "Textured loft tablescape for a private dinner",
+    "src": "/images/chicago-loft-tablescape.webp",
+    "source": "https://www.pexels.com/photo/11434576/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "white-floral-table",
+    "id": "17315407",
+    "alt": "White floral table design for an elegant event",
+    "src": "/images/white-floral-table.webp",
+    "source": "https://www.pexels.com/photo/17315407/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "colourful-candle-tablescape",
+    "id": "27378774",
+    "alt": "Colourful candlelit tablescape with layered glassware",
+    "src": "/images/colourful-candle-tablescape.webp",
+    "source": "https://www.pexels.com/photo/27378774/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2619
+  },
+  {
+    "name": "string-light-reception",
+    "id": "9375427",
+    "alt": "Reception room prepared beneath warm string lights",
+    "src": "/images/string-light-reception.webp",
+    "source": "https://www.pexels.com/photo/9375427/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1202
+  },
+  {
+    "name": "modern-candle-tablescape",
+    "id": "28450665",
+    "alt": "Modern private dinner table with candlelight",
+    "src": "/images/modern-candle-tablescape.webp",
+    "source": "https://www.pexels.com/photo/28450665/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "warm-wedding-candle",
+    "id": "17315461",
+    "alt": "Warm wedding candle detail on a reception table",
+    "src": "/images/warm-wedding-candle.webp",
+    "source": "https://www.pexels.com/photo/17315461/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "romantic-table-setting",
+    "id": "6659531",
+    "alt": "Romantic floral table setting with candles",
+    "src": "/images/romantic-table-setting.webp",
+    "source": "https://www.pexels.com/photo/6659531/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "vintage-floral-tablescape",
+    "id": "37423116",
+    "alt": "Vintage-inspired floral tablescape",
+    "src": "/images/vintage-floral-tablescape.webp",
+    "source": "https://www.pexels.com/photo/37423116/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "gold-accent-place-setting",
+    "id": "6479558",
+    "alt": "Gold-accented place setting for a formal dinner",
+    "src": "/images/gold-accent-place-setting.webp",
+    "source": "https://www.pexels.com/photo/6479558/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "white-rose-reception-table",
+    "id": "35985206",
+    "alt": "White rose centrepiece on a reception table",
+    "src": "/images/white-rose-reception-table.webp",
+    "source": "https://www.pexels.com/photo/35985206/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1202
+  },
+  {
+    "name": "lavender-gala-dinner",
+    "id": "36873712",
+    "alt": "Lavender-lit gala dinner room",
+    "src": "/images/lavender-gala-dinner.webp",
+    "source": "https://www.pexels.com/photo/36873712/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "floating-candle-table",
+    "id": "34580057",
+    "alt": "Floating candle centrepiece for an intimate dinner",
+    "src": "/images/floating-candle-table.webp",
+    "source": "https://www.pexels.com/photo/34580057/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2724
+  },
+  {
+    "name": "editorial-wedding-couple",
+    "id": "19390350",
+    "alt": "Editorial portrait of a wedding couple",
+    "src": "/images/editorial-wedding-couple.webp",
+    "source": "https://www.pexels.com/photo/19390350/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1707,
+    "height": 2560
+  },
+  {
+    "name": "garden-wedding-portrait",
+    "id": "13470064",
+    "alt": "Wedding portrait in a lush garden",
+    "src": "/images/garden-wedding-portrait.webp",
+    "source": "https://www.pexels.com/photo/13470064/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1198
+  },
+  {
+    "name": "wedding-hands-detail",
+    "id": "12681834",
+    "alt": "Close detail of a couple holding hands",
+    "src": "/images/wedding-hands-detail.webp",
+    "source": "https://www.pexels.com/photo/12681834/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2570
+  },
+  {
+    "name": "intimate-wedding-portrait",
+    "id": "11391115",
+    "alt": "Intimate wedding portrait in soft natural light",
+    "src": "/images/intimate-wedding-portrait.webp",
+    "source": "https://www.pexels.com/photo/11391115/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "timeless-wedding-details",
+    "id": "5774951",
+    "alt": "Timeless wedding accessories and details",
+    "src": "/images/timeless-wedding-details.webp",
+    "source": "https://www.pexels.com/photo/5774951/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "muslim-wedding-embrace",
+    "id": "34997294",
+    "alt": "Muslim wedding couple sharing a quiet embrace",
+    "src": "/images/muslim-wedding-embrace.webp",
+    "source": "https://www.pexels.com/photo/34997294/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "outdoor-muslim-wedding",
+    "id": "19698116",
+    "alt": "Outdoor Muslim wedding portrait",
+    "src": "/images/outdoor-muslim-wedding.webp",
+    "source": "https://www.pexels.com/photo/19698116/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2699
+  },
+  {
+    "name": "wedding-ceremony-hands",
+    "id": "27743346",
+    "alt": "Hands held during a wedding ceremony",
+    "src": "/images/wedding-ceremony-hands.webp",
+    "source": "https://www.pexels.com/photo/27743346/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "outdoor-wedding-conversation",
+    "id": "11967008",
+    "alt": "Couple sharing a conversation at an outdoor wedding",
+    "src": "/images/outdoor-wedding-conversation.webp",
+    "source": "https://www.pexels.com/photo/11967008/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "black-tie-wedding-portrait",
+    "id": "37055942",
+    "alt": "Black-tie wedding portrait with formal styling",
+    "src": "/images/black-tie-wedding-portrait.webp",
+    "source": "https://www.pexels.com/photo/37055942/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "corporate-gala-hall",
+    "id": "35042459",
+    "alt": "Large corporate gala hall with themed lighting",
+    "src": "/images/corporate-gala-hall.webp",
+    "source": "https://www.pexels.com/photo/35042459/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1202
+  },
+  {
+    "name": "african-wedding-portrait",
+    "id": "10899419",
+    "alt": "African wedding portrait with joyful colour",
+    "src": "/images/african-wedding-portrait.webp",
+    "source": "https://www.pexels.com/photo/10899419/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "corporate-toast",
+    "id": "6405661",
+    "alt": "Diverse colleagues sharing a celebratory toast",
+    "src": "/images/corporate-toast.webp",
+    "source": "https://www.pexels.com/photo/6405661/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1202
+  },
+  {
+    "name": "gala-banquet",
+    "id": "14636319",
+    "alt": "Banquet hall arranged for a formal gala",
+    "src": "/images/gala-banquet.webp",
+    "source": "https://www.pexels.com/photo/14636319/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1202
+  },
+  {
+    "name": "conference-audience",
+    "id": "9275222",
+    "alt": "Conference audience watching a stage presentation",
+    "src": "/images/conference-audience.webp",
+    "source": "https://www.pexels.com/photo/9275222/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "networking-room",
+    "id": "8761636",
+    "alt": "Business guests networking in a conference room",
+    "src": "/images/networking-room.webp",
+    "source": "https://www.pexels.com/photo/8761636/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1202
+  },
+  {
+    "name": "event-hall-classic",
+    "id": "16985127",
+    "alt": "Classic event hall arranged with round tables",
+    "src": "/images/event-hall-classic.webp",
+    "source": "https://www.pexels.com/photo/16985127/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "event-hall-modern",
+    "id": "16985187",
+    "alt": "Modern event hall ready for a celebration",
+    "src": "/images/event-hall-modern.webp",
+    "source": "https://www.pexels.com/photo/16985187/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "conference-details",
+    "id": "8761738",
+    "alt": "Microphone, badge and program prepared for a conference",
+    "src": "/images/conference-details.webp",
+    "source": "https://www.pexels.com/photo/8761738/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1202
+  },
+  {
+    "name": "conference-conversation",
+    "id": "8761782",
+    "alt": "Two professionals speaking during a conference break",
+    "src": "/images/conference-conversation.webp",
+    "source": "https://www.pexels.com/photo/8761782/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1202
+  },
+  {
+    "name": "ring-exchange-closeup",
+    "id": "18706408",
+    "alt": "Close view of a ring exchange during a ceremony",
+    "src": "/images/ring-exchange-closeup.webp",
+    "source": "https://www.pexels.com/photo/18706408/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "wedding-rings-hands",
+    "id": "10689262",
+    "alt": "Couple holding hands and showing wedding rings",
+    "src": "/images/wedding-rings-hands.webp",
+    "source": "https://www.pexels.com/photo/10689262/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "rings-invitation",
+    "id": "30232952",
+    "alt": "Gold wedding rings resting on an invitation",
+    "src": "/images/rings-invitation.webp",
+    "source": "https://www.pexels.com/photo/30232952/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "jewish-ring-ceremony",
+    "id": "31416469",
+    "alt": "Hands exchanging a ring during a Jewish wedding ceremony",
+    "src": "/images/jewish-ring-ceremony.webp",
+    "source": "https://www.pexels.com/photo/31416469/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1706,
+    "height": 2560
+  },
+  {
+    "name": "engagement-embrace",
+    "id": "18664651",
+    "alt": "Engaged couple embracing and showing an engagement ring",
+    "src": "/images/engagement-embrace.webp",
+    "source": "https://www.pexels.com/photo/18664651/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1202
+  },
+  {
+    "name": "romantic-outdoor-portrait",
+    "id": "30822475",
+    "alt": "Wedding couple sharing a quiet moment outdoors",
+    "src": "/images/romantic-outdoor-portrait.webp",
+    "source": "https://www.pexels.com/photo/30822475/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2699
+  },
+  {
+    "name": "golden-wedding-portrait",
+    "id": "31580630",
+    "alt": "Couple in traditional wedding attire in warm outdoor light",
+    "src": "/images/golden-wedding-portrait.webp",
+    "source": "https://www.pexels.com/photo/31580630/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2700
+  },
+  {
+    "name": "garden-couple",
+    "id": "15379426",
+    "alt": "Wedding couple looking at each other beside greenery",
+    "src": "/images/garden-couple.webp",
+    "source": "https://www.pexels.com/photo/15379426/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "name": "family-maternity",
+    "id": "28683426",
+    "alt": "Family gathered together for a maternity portrait",
+    "src": "/images/family-maternity.webp",
+    "source": "https://www.pexels.com/photo/28683426/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2699
+  },
+  {
+    "name": "maternity-couple",
+    "id": "18671450",
+    "alt": "Expectant parents embracing during a maternity session",
+    "src": "/images/maternity-couple.webp",
+    "source": "https://www.pexels.com/photo/18671450/",
+    "license": "https://www.pexels.com/license/",
+    "width": 1800,
+    "height": 2400
+  }
+]
