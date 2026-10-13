@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Picture, Action, Heading, CTA } from "@/components/ui";
-import { Reel } from "@/components/reel";
+import { Film } from "@/components/film";
+import { CameraMark } from "@/components/brand";
 import { stories, services } from "@/data/site";
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 export default function Home() {
   return (
     <>
-      <section className="hero">
+      <section className="hero campaign-hero">
         <Picture
           name="romantic-outdoor-portrait"
           priority
@@ -17,83 +18,103 @@ export default function Home() {
         />
         <div className="hero-shade" />
         <div className="hero-topline">
-          <span>Wedding · Event · Portrait</span>
-          <span>Canada & United States / Studio concept</span>
+          <span>Photography & cinematography</span>
+          <span>Canada · United States · Elsewhere</span>
         </div>
         <div className="hero-content">
           <span className="eyebrow">
-            For the moments that become everything
+            Aurel Frame / An editorial perspective
           </span>
           <h1>
-            Beautiful Stories.
+            Moments Become
             <br />
-            <em>Timelessly</em> Captured.
+            <em>Masterpieces.</em>
           </h1>
           <p>
-            Honest emotion. An editorial eye.
+            The feeling of a day.
             <br />
-            Photographs that feel like the way you remember.
+            The art of remembering it.
           </p>
           <div className="hero-actions">
             <Action href="/portfolio" light>
-              Explore the portfolio
+              Explore the stories
             </Action>
-            <Link prefetch={false} className="text-link" href="/contact">
-              Inquire now <ArrowUpRight size={17} />
+            <Link prefetch={false} href="/contact" className="text-link">
+              Begin your story <ArrowUpRight size={20} />
             </Link>
           </div>
         </div>
+        <Link
+          prefetch={false}
+          href="/portfolio/the-garden-edit"
+          data-shutter="true"
+          className="hero-gallery glass-control"
+        >
+          <CameraMark size={32} />
+          <span>
+            Through our lens<small>Explore the garden edit</small>
+          </span>
+          <ArrowUpRight size={18} />
+        </Link>
         <div className="hero-bottom">
           <a href="#introduction">
-            Scroll to discover <ArrowDown size={15} />
+            Discover the perspective <ArrowDown size={18} />
           </a>
-          <span>01 / The beginning</span>
-          <span className="hero-demo">An MSPixelPulse photography demo</span>
-        </div>
-      </section>
-      <section id="introduction" className="intro section reveal">
-        <span className="eyebrow">The Aurel perspective</span>
-        <h2>
-          Not just how it looked.
-          <br />
-          <em>How it felt.</em>
-        </h2>
-        <div className="intro-bottom">
-          <span className="monogram" aria-hidden>
-            AF
+          <span>01 / Still & moving stories</span>
+          <span className="hero-demo">
+            Fictional studio · Licensed stock imagery
           </span>
-          <p>
-            Some moments are too meaningful to simply document. They deserve to
-            be seen, felt and remembered. AUREL FRAME is a fictional studio
-            shaped around a simple idea: beautiful photographs begin with
-            genuine connection.
-          </p>
-          <Action href="/about">Meet the studio</Action>
         </div>
       </section>
-      <section className="featured section">
+      <section id="introduction" className="section introduction-edit">
+        <span className="eyebrow">The Aurel perspective</span>
+        <div>
+          <h2>
+            Your story.
+            <br />
+            Our <em>art.</em>
+          </h2>
+          <div className="intro-copy">
+            <p>
+              Not just a beautiful photograph. A gesture, a glance, a feeling
+              you can return to.
+            </p>
+            <p>
+              A fictional creative studio exploring the space between editorial
+              direction and the beautiful, unscripted moments of life.
+            </p>
+            <Action href="/about">Behind the frame</Action>
+          </div>
+        </div>
+        <span className="intro-rule">
+          HONEST EMOTION / CONSIDERED COMPOSITION / TIMELESS LIGHT
+        </span>
+      </section>
+      <section className="section featured editorial-stories">
         <div className="section-line">
           <Heading
             eyebrow="Selected stories / 01—03"
             title={
               <>
-                A little romance.
+                A moment.
                 <br />A lasting <em>impression.</em>
               </>
             }
           />
-          <Action href="/portfolio">View all collections</Action>
+          <Action href="/portfolio">The complete collection</Action>
         </div>
         <div className="story-grid">
           {stories.slice(0, 3).map((s, i) => (
             <Link
               prefetch={false}
+              data-shutter="true"
               href={"/portfolio/" + s.slug}
-              className="story-card reveal"
+              className="story-card focus-frame reveal"
               key={s.slug}
             >
               <div className="image-wrap">
                 <Picture name={s.cover} />
+                <span className="focus-brackets" aria-hidden />
                 <span className="image-arrow">
                   <ArrowUpRight />
                 </span>
@@ -110,20 +131,59 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="service-preview section">
-        <div className="service-heading">
+      <section className="cinema cinema-edit">
+        <div className="section cinema-heading">
           <Heading
-            eyebrow="The signature offerings"
+            eyebrow="The moving image"
             title={
               <>
-                Life happens.
+                Some stories
                 <br />
-                <em>We frame it.</em>
+                deserve to <em>move.</em>
               </>
             }
-            text="From the first yes to a room full of possibility. Explore a considered approach to every kind of gathering."
+            text="A quiet look. A dress in motion. The atmosphere of a room. Discover our cinematic point of view."
           />
-          <Action href="/services">Explore the services</Action>
+          <Action href="/portfolio#films" light>
+            Explore the film studies
+          </Action>
+        </div>
+        <div className="section cinema-feature">
+          <Film
+            id="garden-film"
+            title="The garden, in motion"
+            description="An unhurried portrait, surrounded by green"
+          />
+          <div className="film-side-note">
+            <span className="eyebrow">01 / Wedding film study</span>
+            <p>
+              Stay a little
+              <br />
+              <em>longer.</em>
+            </p>
+            <CameraMark size={64} />
+            <span>
+              Licensed stock film.
+              <br />
+              An illustration of the studio’s visual language.
+            </span>
+          </div>
+        </div>
+      </section>
+      <section className="section service-preview">
+        <div className="service-heading">
+          <Heading
+            eyebrow="Photography / Cinema"
+            title={
+              <>
+                Life unfolds.
+                <br />
+                <em>We notice.</em>
+              </>
+            }
+            text="For the celebration, the connection, and everything in between."
+          />
+          <Action href="/services">Signature services</Action>
         </div>
         <div className="service-list">
           {services.map((s) => (
@@ -134,58 +194,24 @@ export default function Home() {
             >
               <small>{s.number}</small>
               <h3>{s.title}</h3>
-              <ArrowUpRight size={23} />
+              <ArrowUpRight size={24} />
             </Link>
           ))}
         </div>
       </section>
-      <section className="editorial-band">
+      <section className="editorial-band statement-edit">
         <Picture name="garden-wedding-portrait" sizes="100vw" />
         <div>
           <span className="eyebrow">The quiet between the moments</span>
           <h2>
-            Presence over posing.
+            Beautifully seen.
             <br />
-            <em>Feeling over perfection.</em>
+            <em>Naturally you.</em>
           </h2>
+          <span className="fine-print">
+            A stock editorial study in light and connection.
+          </span>
         </div>
-      </section>
-      <section className="section love-stories">
-        <Heading
-          eyebrow="More than a day"
-          title={
-            <>
-              Every chapter has
-              <br />
-              its own <em>light.</em>
-            </>
-          }
-        />
-        <div className="duo-grid">
-          {stories.slice(4, 6).map((s) => (
-            <Link
-              prefetch={false}
-              className="story-card reveal"
-              href={"/portfolio/" + s.slug}
-              key={s.slug}
-            >
-              <div className="image-wrap">
-                <Picture name={s.cover} />
-              </div>
-              <span className="eyebrow">{s.category} / Stock mood board</span>
-              <h3>
-                {s.title} <ArrowUpRight size={22} />
-              </h3>
-            </Link>
-          ))}
-        </div>
-      </section>
-      <section className="cinema">
-        <Reel />
-        <p className="cinema-note">
-          A cinematic photography sequence · Licensed stills, rather than studio
-          film footage.
-        </p>
       </section>
       <section className="section studio-split">
         <div className="studio-images reveal">
@@ -194,85 +220,51 @@ export default function Home() {
             className="studio-primary"
           />
           <Picture name="timeless-wedding-details" className="studio-detail" />
+          <span className="portrait-caption">
+            Ari / Original generated portrait
+          </span>
         </div>
         <div className="studio-copy reveal">
-          <span className="eyebrow">Behind the frame</span>
+          <span className="eyebrow">The person behind the perspective</span>
           <h2>
             A thoughtful eye.
             <br />
             An open <em>heart.</em>
           </h2>
           <p>
-            Imagine a photographer who knows when to guide you, and when to
-            quietly step back. That is the creative philosophy behind this
-            studio concept.
+            Knowing when to guide. Knowing when to step back. And always leaving
+            room for the unexpected.
           </p>
           <p>
-            Natural light, honest expression and a little cinematic magic. A
-            contemporary approach with memories at its centre.
+            Meet Ari, the imagined creative voice of AUREL FRAME. A fictional
+            character with a philosophy rooted in connection, curiosity and
+            careful observation.
           </p>
-          <Action href="/about">Our creative philosophy</Action>
-        </div>
-      </section>
-      <section className="approach section">
-        <Heading
-          eyebrow="The way we see"
-          title={
-            <>
-              Beautifully considered.
-              <br />
-              <em>Naturally you.</em>
-            </>
-          }
-        />
-        <div className="principles">
-          {[
-            [
-              "01",
-              "A calm presence",
-              "Space to be yourself. Gentle direction when you need it.",
-            ],
-            [
-              "02",
-              "An editorial eye",
-              "Thoughtful composition with emotion at its centre.",
-            ],
-            [
-              "03",
-              "A complete story",
-              "The big moments, the small gestures, the feeling in between.",
-            ],
-          ].map(([n, t, d]) => (
-            <div key={n}>
-              <span>{n}</span>
-              <h3>{t}</h3>
-              <p>{d}</p>
-            </div>
-          ))}
+          <Action href="/about">Meet the studio</Action>
         </div>
       </section>
       <section className="experience-strip section">
         <div>
-          <span className="eyebrow">The experience</span>
+          <span className="eyebrow">A considered experience</span>
           <h2>
-            Thoughtful from
+            From the first hello
             <br />
-            <em>hello to heirloom.</em>
+            to the last <em>frame.</em>
           </h2>
         </div>
         <div>
           <p>
-            Creative planning. Unhurried connection. A careful edit. From the
-            first conversation to the gallery and album, every step has a
-            purpose.
+            A little planning. A lot of presence. An edit that brings it all
+            together. Explore the thoughtful steps behind a complete visual
+            story.
           </p>
-          <Action href="/experience">Walk through the experience</Action>
+          <Action href="/experience">Your photography journey</Action>
         </div>
       </section>
       <section className="portfolio-ribbon">
         <div className="ribbon-title">
           <span className="eyebrow">A few favourite frames</span>
-          <Action href="/portfolio">Explore the gallery</Action>
+          <Action href="/portfolio">Inside the gallery</Action>
         </div>
         <div className="ribbon-images">
           {[
@@ -281,26 +273,30 @@ export default function Home() {
             "white-floral-table",
             "engagement-embrace",
           ].map((n) => (
-            <Link prefetch={false} href="/portfolio" key={n}>
+            <Link
+              prefetch={false}
+              data-shutter="true"
+              className="focus-frame"
+              href="/portfolio"
+              key={n}
+            >
               <Picture name={n} />
+              <span className="focus-brackets" aria-hidden />
             </Link>
           ))}
         </div>
       </section>
       <section className="testimonial section reveal">
-        <span className="eyebrow">
-          The feeling we hope to leave / illustrative testimonial
-        </span>
+        <span className="eyebrow">A note on the creative philosophy</span>
         <blockquote>
-          “The photographs felt like us.
+          “The most meaningful frame
           <br />
-          Just a little more <em>beautifully seen.</em>”
+          is the one that makes you <em>feel.</em>”
         </blockquote>
-        <span>Sample couple — fictional feedback, not a real review</span>
+        <span>The AUREL FRAME studio concept</span>
       </section>
-      <section className="destination">
-        <Picture name="beach-wedding-vows" sizes="100vw" />
-        <div className="destination-content">
+      <section className="section destination-edit">
+        <div>
           <span className="eyebrow">Beyond the familiar</span>
           <h2>
             For wherever
@@ -308,50 +304,29 @@ export default function Home() {
             love <em>takes you.</em>
           </h2>
           <p>
-            Open horizons. Intimate celebrations. A story that travels with you.
+            Open horizons. An unfamiliar place. The same beautiful connection.
           </p>
-          <Action href="/portfolio/somewhere-by-the-sea" light>
-            Explore the destination edit
+          <Action href="/portfolio/somewhere-by-the-sea">
+            The destination edit
           </Action>
-          <small>
-            Stock destination inspiration / no actual travel commission
-          </small>
         </div>
+        <Film
+          id="beyond-the-shore"
+          title="An open horizon"
+          description="A coastal landscape study for destination inspiration"
+        />
       </section>
       <CTA />
-      <section className="visual-diary">
-        <div className="diary-label">
-          <span className="eyebrow">The visual diary</span>
-          <span>A little inspiration, frame by frame.</span>
-          <Link prefetch={false} href="/portfolio">
-            See the collection ↗
-          </Link>
-        </div>
-        <div className="diary-grid">
-          {[
-            "rings-invitation",
-            "garden-couple",
-            "floating-candle-table",
-            "wedding-rings-hands",
-            "maternity-couple",
-            "romantic-table-setting",
-          ].map((n) => (
-            <Link prefetch={false} href="/portfolio" key={n}>
-              <Picture name={n} />
-            </Link>
-          ))}
-        </div>
-      </section>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            name: "AUREL FRAME — Fictional Photography Studio Demo",
+            name: "AUREL FRAME — Fictional Photography & Cinema Studio Demo",
             url: "https://photographer.mspixelpulse.com",
             description:
-              "MSPixelPulse portfolio concept using licensed stock imagery.",
+              "MSPixelPulse portfolio concept using licensed stock imagery and footage.",
           }),
         }}
       />

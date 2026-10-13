@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Brand } from "./brand";
 import { nav } from "@/data/navigation";
 export default function Navigation() {
   const path = usePathname();
@@ -42,10 +43,7 @@ export default function Navigation() {
           className="wordmark"
           title="Aurel Frame home"
         >
-          <span>
-            AUREL <i>FRAME</i>
-          </span>
-          <small>PHOTOGRAPHY & FILM</small>
+          <Brand />
         </Link>
         <nav aria-label="Main navigation">
           {nav.slice(1, -1).map((n) => (
@@ -83,7 +81,9 @@ export default function Navigation() {
         onCancel={close}
       >
         <div className="drawer-top">
-          <span className="wordmark">AUREL FRAME</span>
+          <span className="wordmark">
+            <Brand compact />
+          </span>
           <button onClick={close} aria-label="Close navigation">
             <X />
           </button>

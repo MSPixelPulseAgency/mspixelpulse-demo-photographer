@@ -48,6 +48,29 @@ for (let i = 0; i < assets.length; i += 8) {
     }),
   );
 }
+const films = JSON.parse(await fs.readFile("src/data/films.json", "utf8"));
+let media = 0;
+for (const film of films) {
+  for (const src of [
+    film.src,
+    film.poster,
+    film.poster.replace(".webp", "-small.webp"),
+  ]) {
+    const r = await fetch(base + src, { method: "HEAD" });
+    if (!r.ok) failures.push(src + " failed " + r.status);
+    else media++;
+  }
+}
+for (const src of [
+  "/icon.svg",
+  "/apple-touch-icon.png",
+  "/camera-mark.svg",
+  "/logo-dark.svg",
+  "/logo-light.svg",
+]) {
+  const r = await fetch(base + src, { method: "HEAD" });
+  if (!r.ok) failures.push(src + " failed");
+}
 const missing = await fetch(base + "/this-page-does-not-exist");
 if (missing.status !== 404) failures.push("404 status " + missing.status);
 console.log(
@@ -58,6 +81,7 @@ console.log(
       uniqueTitles: titles.size,
       internalLinks: internal.size,
       imageVariants: images,
+      filmFilesAndPosters: media,
       custom404: missing.status,
       failures,
     },

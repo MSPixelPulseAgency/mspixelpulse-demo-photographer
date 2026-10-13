@@ -208,7 +208,7 @@ export const services = [
     benefit:
       "A story-led approach to motion, carefully coordinated with photography.",
     deliverable:
-      "Example: a highlight edit and short social cuts. This demo showcases animated stills.",
+      "Example: a highlight edit and short social cuts. This demo showcases clearly labelled licensed stock film studies.",
   },
 ];
 export const addons = [
@@ -391,7 +391,7 @@ export const faqs = [
   ],
   [
     "Can photography and film be combined?",
-    "Yes, the sample collections include a coordinated photography-and-film option. The website uses animated photography sequences rather than representing stock footage as studio films.",
+    "Yes, the sample collections include a coordinated photography-and-film option. The website showcases licensed stock film studies, clearly distinguished from studio commissions.",
   ],
 ];
 export const articles = [

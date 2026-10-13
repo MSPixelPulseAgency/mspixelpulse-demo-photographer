@@ -1,6 +1,6 @@
 # AUREL FRAME
 
-Premium editorial wedding, event and lifestyle photography studio **demo**, created by MSPixelPulse. The studio, photographer, collections, prices and feedback are fictional. All photographs are licensed stock curated as thematic mood boards, not real studio work.
+Premium editorial wedding, event and lifestyle photography studio **demo**, created by MSPixelPulse. The studio, photographer, collections, prices and feedback are fictional. The 64 licensed stock photographs are curated as thematic mood boards; Ari’s original generated portrait is disclosed. No scene is represented as real studio work.
 
 - Live website: https://photographer.mspixelpulse.com
 - Agency portfolio: https://mspixelpulse.com/projects
@@ -8,7 +8,7 @@ Premium editorial wedding, event and lifestyle photography studio **demo**, crea
 
 ## Stack
 
-Next.js 16 App Router, TypeScript, React, Tailwind CSS 4 with shared CSS design tokens, Lucide React. Pre-rendered pages, locally hosted responsive WebP assets, next/font Cormorant Garamond and Manrope. No database, paid integration, analytics or inquiry backend.
+Next.js 16 App Router, TypeScript, React, Tailwind CSS 4 with shared CSS design tokens, Lucide React. Pre-rendered pages, locally hosted responsive WebP assets, next/font Bodoni Moda and DM Sans. No database, paid integration, analytics or inquiry backend.
 
 ## Development
 
@@ -26,11 +26,11 @@ Node 22–24. Data in `src/data`, reusable UI and client interactions in `src/co
 
 ## Pages & interactions
 
-Eight main pages; six themed portfolio detail pages; six original journal articles; privacy and photography credits; custom 404. Gallery category filters, native fullscreen dialog, arrow-key navigation, touch swipes, CAD/USD sample price selector, FAQ accordions, mobile dialog navigation and pausable animated photography sequence. Reduced-motion support, visible focus, semantic landmarks and responsive crops.
+Eight main pages; six themed portfolio detail pages; six original journal articles; privacy and photography credits; custom 404. Gallery category filters, native fullscreen dialog, arrow-key navigation, touch swipes, CAD/USD sample price selector, FAQ accordions, mobile dialog navigation and five user-initiated cinematic stock films with offscreen pause. Reduced-motion support, visible focus, semantic landmarks and responsive crops.
 
 ## Assets
 
-See `ASSET-LICENSES.md` and `src/data/assets.json` for all 64 image sources and licensing. `node scripts/prepare-assets.mjs` regenerates local WebP files from the recorded Pexels sources. `node scripts/brand-assets.mjs` creates social/favicon raster derivatives from the original brand and licensed photography. No stock photographs are available as client downloads.
+See `ASSET-LICENSES.md` and `src/data/assets.json` for all 64 image sources and licensing. `node scripts/prepare-assets.mjs` regenerates local WebP files from the recorded Pexels sources. `node scripts/brand-assets.mjs` creates social/favicon raster derivatives from the original brand and licensed photography. `node scripts/prepare-films.mjs` regenerates the licensed MP4 clips and responsive posters (requires ffmpeg). No stock photographs or films are offered as client downloads.
 
 ## Deployment
 

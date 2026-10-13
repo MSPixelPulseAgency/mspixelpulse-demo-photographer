@@ -44,6 +44,7 @@ export default async function Article({
           Written for the AUREL FRAME fictional studio concept. Planning notes
           are general suggestions, not a contractual promise.
         </p>
+        <blockquote className="article-pullquote">{a.intro}</blockquote>
         {a.sections.map(([t, p]) => (
           <section key={t}>
             <h2>{t}</h2>

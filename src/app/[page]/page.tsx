@@ -5,6 +5,9 @@ import { PageIntro, Heading, Picture, Action, CTA } from "@/components/ui";
 import { Gallery, FAQ, Pricing, Inquiry } from "@/components/interactions";
 import { stories, services, addons, steps, articles } from "@/data/site";
 import assets from "@/data/assets.json";
+import films from "@/data/films.json";
+import { Film, FilmCollection } from "@/components/film";
+import { CameraMark } from "@/components/brand";
 const pages: Record<
   string,
   { title: string; description: string; heading: string }
@@ -49,7 +52,7 @@ const pages: Record<
     title: "Contact — Private Demo Photography Inquiry",
     description:
       "Explore the AUREL FRAME demo inquiry form. No personal data is sent or stored and no booking is made.",
-    heading: "Every story starts with hello.",
+    heading: "Let’s create something beautiful.",
   },
   privacy: {
     title: "Privacy & Demo Notice",
@@ -97,19 +100,73 @@ export default async function Page({
   if (!p) notFound();
   return (
     <>
-      <PageIntro
-        eyebrow={
-          page === "privacy" || page === "credits"
-            ? "The studio notice"
-            : "Aurel Frame / " + page
-        }
-        title={p.heading}
-        text={
-          page === "portfolio"
-            ? "A considered collection of emotion, atmosphere and light. Illustrative stock mood boards, never represented as our client work."
-            : p.description
-        }
-      />
+      {page !== "contact" && (
+        <PageIntro
+          eyebrow={
+            page === "privacy" || page === "credits"
+              ? "The studio notice"
+              : "Aurel Frame / " + page
+          }
+          title={
+            page === "portfolio" ? (
+              <>
+                Stories worth
+                <br />
+                <em>returning to.</em>
+              </>
+            ) : page === "services" ? (
+              <>
+                For life’s
+                <br />
+                <em>defining moments.</em>
+              </>
+            ) : page === "about" ? (
+              <>
+                An eye for light.
+                <br />
+                <em>A heart for stories.</em>
+              </>
+            ) : page === "experience" ? (
+              <>
+                A little planning.
+                <br />
+                <em>A lot of presence.</em>
+              </>
+            ) : page === "investment" ? (
+              <>
+                For the things
+                <br />
+                <em>that stay.</em>
+              </>
+            ) : page === "journal" ? (
+              <>
+                The art of
+                <br />
+                <em>looking closer.</em>
+              </>
+            ) : (
+              p.heading
+            )
+          }
+          image={
+            (
+              {
+                portfolio: "editorial-wedding-couple",
+                services: "garden-wedding-portrait",
+                about: "wedding-hands-detail",
+                experience: "timeless-wedding-details",
+                investment: "rings-invitation",
+                journal: "engagement-embrace",
+              } as Record<string, string>
+            )[page]
+          }
+          text={
+            page === "portfolio"
+              ? "A considered collection of emotion, atmosphere and light. Illustrative stock mood boards, never represented as our client work."
+              : p.description
+          }
+        />
+      )}
       {page === "portfolio" && (
         <>
           <section className="section story-grid portfolio-stories">
@@ -117,11 +174,13 @@ export default async function Page({
               <Link
                 prefetch={false}
                 href={"/portfolio/" + s.slug}
-                className="story-card"
+                className="story-card focus-frame"
+                data-shutter="true"
                 key={s.slug}
               >
                 <div className="image-wrap">
                   <Picture name={s.cover} />
+                  <span className="focus-brackets" aria-hidden />
                 </div>
                 <span className="eyebrow">{s.category} / Stock editorial</span>
                 <h2>{s.title}</h2>
@@ -140,6 +199,17 @@ export default async function Page({
             />
             <Gallery />
           </section>
+          <section id="films" className="section film-library">
+            <Heading
+              eyebrow="Cinematography / licensed stock studies"
+              title={
+                <>
+                  The moving <em>image.</em>
+                </>
+              }
+            />
+            <FilmCollection />
+          </section>
         </>
       )}
       {page === "services" && (
@@ -150,7 +220,11 @@ export default async function Page({
               className="service-detail reveal"
               key={s.title}
             >
-              <Picture name={s.image} />
+              {s.number === "05" ? (
+                <Film id="the-preparation" title="Before the first look" />
+              ) : (
+                <Picture name={s.image} />
+              )}
               <div>
                 <span className="eyebrow">
                   {s.number} / The signature offering
@@ -168,6 +242,33 @@ export default async function Page({
               </div>
             </article>
           ))}
+          <article id="service-06" className="service-detail reveal">
+            <Film
+              id="gathering-in-motion"
+              title="The atmosphere of an evening"
+            />
+            <div>
+              <span className="eyebrow">06 / Commercial videography</span>
+              <h2>
+                Stories for
+                <br />
+                <em>people & brands.</em>
+              </h2>
+              <p className="lead">
+                Considered films for a gathering, a launch or a new idea.
+              </p>
+              <ul>
+                <li>Corporate event highlights</li>
+                <li>Brand stories & product launches</li>
+                <li>Short social edits</li>
+              </ul>
+              <p>
+                Illustrative deliverables: a brief-led film, a highlight edit
+                and selected social cuts.
+              </p>
+              <Action>Explore a commercial film</Action>
+            </div>
+          </article>
           <div className="add-ons">
             <Heading
               eyebrow="Make it yours"
@@ -223,6 +324,29 @@ export default async function Page({
                 carefully and create a gallery that feels personal.
               </p>
               <Action>Start a conversation</Action>
+            </div>
+          </section>
+          <section className="section behind-lens-edit">
+            <Film
+              id="behind-the-lens"
+              title="The craft behind the frame"
+              description="A close view of a photographer’s lens"
+            />
+            <div>
+              <span className="eyebrow">A study in observation</span>
+              <h2>
+                Look closer.
+                <br />
+                <em>Feel more.</em>
+              </h2>
+              <p>
+                Composition begins with attention. The light on a face. The
+                movement of a hand. The small details that carry a story.
+              </p>
+              <p className="fine-print">
+                Licensed behind-the-scenes stock footage. The photographer shown
+                is not Ari or AUREL FRAME staff.
+              </p>
             </div>
           </section>
           <section className="section approach">
@@ -281,6 +405,21 @@ export default async function Page({
       )}
       {page === "experience" && (
         <>
+          <section className="section experience-opening">
+            <Film id="the-preparation" title="A moment before everything" />
+            <div>
+              <span className="eyebrow">Room to be present</span>
+              <h2>
+                A calm beginning.
+                <br />
+                <em>A beautiful unfolding.</em>
+              </h2>
+              <p>
+                Thoughtful preparation makes space for the day itself. Here is
+                how the imagined studio experience comes together.
+              </p>
+            </div>
+          </section>
           <section className="section timeline">
             {steps.map(([t, d], i) => (
               <article key={t} className="timeline-step reveal">
@@ -348,31 +487,40 @@ export default async function Page({
         </section>
       )}
       {page === "contact" && (
-        <section className="section contact-layout">
+        <section className="section contact-layout contact-edit">
           <aside>
-            <Picture name="intimate-wedding-portrait" />
-            <h2>
-              We’d love to hear
-              <br />
-              what you’re <em>imagining.</em>
-            </h2>
-            <p>
-              Wedding, event, portrait or a little of everything. Explore a
-              thoughtfully designed inquiry experience.
-            </p>
-            <span className="eyebrow">A fictional studio concept</span>
-            <p>
-              For a real website inquiry,{" "}
-              <a href="https://mspixelpulse.com/contact">
-                contact MSPixelPulse
+            <div className="contact-introduction">
+              <span className="eyebrow">
+                The beginning of something beautiful
+              </span>
+              <h1>
+                Let’s create
+                <br />
+                something <em>beautiful.</em>
+              </h1>
+              <p>
+                Tell us about your story, your vision, and the moments you want
+                to remember.
+              </p>
+            </div>
+            <div className="contact-photo">
+              <Picture name="intimate-wedding-portrait" priority />
+              <span className="contact-photo-label glass-overlay">
+                <CameraMark size={30} /> Every story begins with connection.
+              </span>
+            </div>
+            <div className="contact-studio-note">
+              <span className="eyebrow">Aurel Frame / Fictional studio</span>
+              <p>Wedding. Event. Portrait. Film.</p>
+              <a className="text-link" href="https://mspixelpulse.com/contact">
+                For a real website inquiry, contact MSPixelPulse ↗
               </a>
-              .
-            </p>
-            <p className="fine-print">
-              Placeholder agency email: hello@mspixelpulse.com
-              <br />
-              Placeholder phone: +1 (000) 000-0000
-            </p>
+              <p className="fine-print">
+                Agency placeholder: hello@mspixelpulse.com
+                <br />
+                +1 (000) 000-0000
+              </p>
+            </div>
           </aside>
           <Inquiry />
         </section>
@@ -402,10 +550,10 @@ export default async function Page({
           </p>
           <h2>Stock photography.</h2>
           <p>
-            All photographs are licensed stock images curated as themed mood
-            boards. They are not AUREL FRAME client projects, staff portraits or
-            endorsements. Studio motion sections animate still photographs; they
-            are not real wedding films.
+            Stock photographs are licensed images curated as themed mood boards.
+            They are not AUREL FRAME client projects, staff portraits or
+            endorsements. Film studies use licensed stock footage, clearly
+            labelled as inspiration rather than studio commissions.
           </p>
           <Action href="https://mspixelpulse.com/contact">
             Contact the website agency
@@ -421,10 +569,27 @@ export default async function Page({
             studio concept. No endorsement by the people pictured is implied.
           </p>
           <p>
-            Cormorant Garamond and Manrope are distributed through Google Fonts
-            under the SIL Open Font License. The wordmark and AF monogram are
+            Bodoni Moda and DM Sans are distributed through Google Fonts under
+            the SIL Open Font License. The wordmark and camera monogram are
             original to this demo.
           </p>
+          <h2>Cinematic footage sources</h2>
+          <p>
+            These short, silent film studies are served locally under the{" "}
+            <a href="https://mixkit.co/license/#videoFree">
+              Mixkit Stock Video Free License
+            </a>
+            , with the commercial license confirmed on each source page. Clips
+            were trimmed, resized and stripped of audio. No stock scene is
+            represented as a studio commission.
+          </p>
+          <ul className="credit-list">
+            {films.map((f) => (
+              <li key={f.id}>
+                <a href={f.source}>{f.title} — Mixkit</a>
+              </li>
+            ))}
+          </ul>
           <h2>Individual photograph sources</h2>
           <ul className="credit-list">
             {assets.map((a) => (

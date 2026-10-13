@@ -14,3 +14,5 @@ SEO: unique page metadata, one H1, logical headings, internal links, canonical d
 Deployment: Next.js, existing team, project mspixelpulse-demo-photographer, main branch, npm install / npm run build. Run typecheck/lint/test/build plus live QA. No paid upgrades, databases or secrets. Require user-authorized deployment.
 
 Do not edit unrelated demos, Katrina-Studios, billing, credentials, DNS outside photographer, existing approved/sent emails or private Aurelion data. Future agents should read AGENTS.md, confirm authoritative checkout, preserve shared tokens/components/data, inspect visual output and use small clean commits.
+
+Redesign maintenance: preserve Bodoni Moda / DM Sans, 18px desktop navigation and 20px compact menu, shared editorial tokens, original camera assets and reduced-motion shutter feedback. Film source permissions live in src/data/films.json; load clips only on Play, pause offscreen/other players, keep licensed-stock captions and local poster fallbacks.

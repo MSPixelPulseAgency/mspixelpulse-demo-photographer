@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Bodoni_Moda, DM_Sans } from "next/font/google";
 import Link from "next/link";
 import Navigation from "@/components/navigation";
 import { Reveal } from "@/components/reveal";
 import { brand, nav } from "@/data/site";
 import "./globals.css";
-const serif = Cormorant_Garamond({
+import { Brand } from "@/components/brand";
+import { CameraTransitions } from "@/components/camera-transitions";
+const serif = Bodoni_Moda({
   subsets: ["latin"],
   weight: ["400"],
   style: ["normal", "italic"],
   variable: "--font-serif",
   display: "swap",
 });
-const sans = Manrope({
+const sans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", images: ["/social-preview.jpg"] },
   robots: { index: true, follow: true },
-  icons: { icon: "/icon.svg" },
+  icons: { icon: "/icon.svg", apple: "/apple-touch-icon.png" },
 };
 export default function RootLayout({
   children,
@@ -51,7 +53,7 @@ export default function RootLayout({
           <div className="footer-main">
             <div>
               <Link prefetch={false} href="/" className="wordmark">
-                AUREL <i>FRAME</i>
+                <Brand />
               </Link>
               <p>Every Moment, Beautifully Remembered.</p>
               <span className="eyebrow">
@@ -77,6 +79,17 @@ export default function RootLayout({
               <a href="https://mspixelpulse.com/contact">
                 Build a website like this ↗
               </a>
+              <span className="footer-categories">
+                <Link prefetch={false} href="/portfolio">
+                  Wedding stories
+                </Link>
+                <Link prefetch={false} href="/portfolio#films">
+                  Film studies
+                </Link>
+                <Link prefetch={false} href="/services">
+                  Portraits & events
+                </Link>
+              </span>
               <p>
                 Agency contact placeholder:
                 <br />
@@ -97,11 +110,12 @@ export default function RootLayout({
           </div>
           <p className="disclosure">
             Fictional studio. Licensed stock imagery, illustrative collections
-            and sample testimonials. No real client work, credentials, bookings
+            and stock film studies. No real client work, credentials, bookings
             or availability are represented.
           </p>
         </footer>
         <Reveal />
+        <CameraTransitions />
       </body>
     </html>
   );

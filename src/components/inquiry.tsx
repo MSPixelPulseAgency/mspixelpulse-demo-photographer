@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { validateInquiry } from "@/data/inquiry";
+import { CameraMark } from "./brand";
 import { Action } from "./ui";
 export function Inquiry() {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -36,6 +37,16 @@ export function Inquiry() {
         {optional && <small>Optional</small>}
         <input
           name={name}
+          placeholder={
+            (
+              {
+                name: "Your name",
+                email: "you@example.com",
+                location: "City or venue",
+                phone: "Optional phone number",
+              } as Record<string, string>
+            )[name]
+          }
           type={type}
           maxLength={type === "email" ? 254 : 120}
           required={!optional}
@@ -87,7 +98,8 @@ export function Inquiry() {
   }
   return success ? (
     <div className="form-success" ref={successRef} tabIndex={-1} role="status">
-      <Check size={32} />
+      <CameraMark size={54} />
+      <Check size={24} />
       <h2>A beautiful beginning.</h2>
       <p>
         Your demo inquiry has been validated. Nothing was sent or stored, and no
@@ -103,7 +115,7 @@ export function Inquiry() {
   ) : (
     <form ref={form} onSubmit={submit} noValidate className="inquiry-form">
       <div className="form-note">
-        <span className="eyebrow">Demo inquiry experience</span>
+        <span className="eyebrow">Begin your story / Demo inquiry</span>
         <p>
           Please use sample details. This form runs entirely in your browser. It
           sends and stores nothing.
@@ -115,9 +127,11 @@ export function Inquiry() {
         </p>
       )}
       <div className="form-grid">
+        <span className="form-part">01 / A little about you</span>
         {field("name", "Full name")}
         {field("email", "Email address", "email")}
         {field("phone", "Phone number", "tel", true)}
+        <span className="form-part">02 / The story you’re imagining</span>
         {select("event", "Event type", [
           "Wedding",
           "Engagement",
@@ -129,7 +143,7 @@ export function Inquiry() {
           "Family",
           "Other",
         ])}
-        {field("date", "Preferred date", "date")}
+        {field("date", "Event date", "date")}
         {field("location", "Event location")}
         {select("country", "Country", [
           "Canada",
@@ -144,7 +158,7 @@ export function Inquiry() {
           "$8,000+",
           "Let’s explore options",
         ])}
-        {select("services", "Preferred services", [
+        {select("services", "Interested services", [
           "Photography",
           "Photography + film",
           "Portrait session",
@@ -158,9 +172,10 @@ export function Inquiry() {
           "A little of everything",
         ])}
         <label className="field full">
-          Tell us a little about your story
+          Your message
           <textarea
             name="details"
+            placeholder="Tell us a little about your vision…"
             required
             maxLength={2000}
             rows={5}
@@ -192,7 +207,7 @@ export function Inquiry() {
         {errors.consent}
       </span>
       <button type="submit" className="action">
-        Preview your inquiry <ArrowRight size={17} />
+        Let’s begin your story <ArrowRight size={17} />
       </button>
       <p className="fine-print">
         No analytics or marketing cookies. No email delivery. See our{" "}

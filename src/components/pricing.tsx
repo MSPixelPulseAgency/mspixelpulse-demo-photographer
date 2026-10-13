@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { packages } from "@/data/site";
+import { Picture } from "./ui";
 import { Action } from "./ui";
 export function Pricing() {
   const [currency, setCurrency] = useState<"CAD" | "USD">("CAD");
@@ -34,7 +35,24 @@ export function Pricing() {
             {i === 3 && (
               <span className="collection-tag">The signature collection</span>
             )}
-            <span className="eyebrow">{p.tag}</span>
+            <Picture
+              name={
+                [
+                  "maternity-couple",
+                  "engagement-embrace",
+                  "intimate-wedding-portrait",
+                  "editorial-wedding-couple",
+                  "black-tie-wedding-portrait",
+                  "beach-wedding-vows",
+                  "corporate-toast",
+                  "wedding-ceremony-hands",
+                ][i]
+              }
+              className="collection-image"
+            />
+            <span className="eyebrow">
+              0{i + 1} / {p.tag}
+            </span>
             <h2>{p.title}</h2>
             <p className="price">
               ${(currency === "CAD" ? p.cad : p.usd).toLocaleString()}{" "}

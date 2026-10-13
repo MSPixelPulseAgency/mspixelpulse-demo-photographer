@@ -48,6 +48,7 @@ export function Action({
       prefetch={false}
       className={`action ${light ? "light" : ""}`}
       href={href}
+      data-shutter={href.startsWith("/portfolio") ? "true" : undefined}
     >
       {children}
       <ArrowUpRight size={17} aria-hidden />
@@ -75,16 +76,30 @@ export function PageIntro({
   eyebrow,
   title,
   text,
+  image,
 }: {
   eyebrow: string;
-  title: string;
+  title: React.ReactNode;
   text: string;
+  image?: string;
 }) {
   return (
-    <section className="page-intro">
-      <span className="eyebrow">{eyebrow}</span>
-      <h1>{title}</h1>
-      <p>{text}</p>
+    <section className={`page-intro ${image ? "page-intro-edit" : ""}`}>
+      <div className="page-intro-copy">
+        <span className="eyebrow">{eyebrow}</span>
+        <h1>{title}</h1>
+        <p>{text}</p>
+      </div>
+      {image && (
+        <div className="page-intro-image">
+          <Picture
+            name={image}
+            priority
+            sizes="(max-width: 800px) 86vw, 35vw"
+          />
+          <span>THE AUREL FRAME EDIT / STOCK INSPIRATION</span>
+        </div>
+      )}
     </section>
   );
 }

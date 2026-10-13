@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, X, Plus } from "lucide-react";
 import { gallery, categories } from "@/data/site";
 import { photo } from "@/data/media";
 import { Picture } from "./ui";
-import { Reel } from "./reel";
+import { FilmCollection } from "./film";
 export function Gallery({ names }: { names?: string[] }) {
   const [category, setCategory] = useState("All");
   const [index, setIndex] = useState<number | null>(null);
@@ -52,7 +52,7 @@ export function Gallery({ names }: { names?: string[] }) {
         </div>
       )}
       {category === "Wedding Films" ? (
-        <Reel />
+        <FilmCollection />
       ) : (
         <>
           <p className="gallery-note">
@@ -87,7 +87,7 @@ export function Gallery({ names }: { names?: string[] }) {
         </>
       )}
       <dialog
-        className="lightbox"
+        className="lightbox glass-modal"
         aria-label="Photography fullscreen viewer"
         ref={dialog}
         onCancel={close}
