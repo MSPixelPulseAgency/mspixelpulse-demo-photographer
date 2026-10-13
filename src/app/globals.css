@@ -3870,3 +3870,18 @@ footer p {
   height: 100%;
   object-fit: cover;
 }
+
+.film-screen video {
+  position: absolute;
+  inset: 0;
+}
+.film-poster {
+  z-index: 1;
+  pointer-events: none;
+}
+.film-play,
+.film-time,
+.film-loading,
+.film-fallback {
+  z-index: 2;
+}

@@ -19,7 +19,8 @@ export function Film({
   const [loaded, setLoaded] = useState(false),
     [playing, setPlaying] = useState(false),
     [failed, setFailed] = useState(false),
-    [waiting, setWaiting] = useState(false);
+    [waiting, setWaiting] = useState(false),
+    [hasFrame, setHasFrame] = useState(false);
   const label = title || film.title;
   useEffect(() => {
     const element = video.current;
@@ -33,10 +34,6 @@ export function Film({
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
-  useEffect(() => {
-    if (!loaded) return;
-    video.current?.play().catch(() => setPlaying(false));
-  }, [loaded]);
   function toggle() {
     if (!video.current) return;
     if (playing) {
@@ -46,13 +43,18 @@ export function Film({
     document.querySelectorAll("video").forEach((v) => {
       if (v !== video.current) v.pause();
     });
-    if (!loaded) setLoaded(true);
-    else video.current.play().catch(() => setPlaying(false));
+    if (!loaded) {
+      video.current.src = film.src;
+      video.current.poster = film.poster;
+      setLoaded(true);
+    }
+    // Keep play inside the user gesture for WebKit and mobile media policies.
+    video.current.play().catch(() => setPlaying(false));
   }
   return (
     <figure className={`film ${className}`}>
       <div className="film-screen">
-        {!loaded && (
+        {(!hasFrame || failed) && (
           <img
             className="film-poster"
             src={film.poster.replace(".webp", "-small.webp")}
@@ -74,6 +76,11 @@ export function Film({
           controls={loaded && !failed}
           onWaiting={() => setWaiting(true)}
           onCanPlay={() => setWaiting(false)}
+          onPlaying={() => {
+            setPlaying(true);
+            setHasFrame(true);
+            setWaiting(false);
+          }}
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
           onEnded={() => setPlaying(false)}
