@@ -2075,8 +2075,8 @@ main:has(> .hero) {
 }
 .hero-shade {
   background:
-    linear-gradient(90deg, #0807058c 0%, #0807053b 57%, #08070512),
-    linear-gradient(0deg, #0807058a, transparent 70%);
+    linear-gradient(90deg, #0000008f 0%, #00000075 38%, #0000004a 72%),
+    linear-gradient(180deg, #00000038 0%, transparent 30%, transparent 62%, #00000057 100%);
 }
 .hero-topline {
   top: 138px;
@@ -3904,18 +3904,67 @@ html {
   height: 68px;
   inset: 14px 3.5% auto;
   padding: 0 22px;
-  gap: 18px;
+  gap: 16px;
+  background: rgba(25, 25, 25, 0.78);
+  color: white;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   box-shadow:
-    var(--shadow),
-    var(--warm-shadow),
-    inset 0 1px 0 #ffffff80;
-  border-color: #c6a46a45;
+    0 8px 28px #00000026,
+    inset 0 1px 0 #e8d9c514;
+  border-color: #ffffff29;
+  transition: background 0.35s, border-color 0.35s, box-shadow 0.35s;
+}
+.site-header.on-hero:not(.scrolled) {
+  background: rgba(25, 25, 25, 0.64);
+  border-color: #ffffff29;
+}
+.site-header.scrolled,
+.site-header.on-hero.scrolled {
+  background: rgba(25, 25, 25, 0.88);
+  color: white;
+  box-shadow: 0 10px 32px #00000033, inset 0 1px 0 #e8d9c518;
 }
 .site-header nav {
-  gap: clamp(12px, 1.25vw, 22px);
+  gap: clamp(12px, 1vw, 18px);
 }
 .site-header nav a {
   font-size: 16.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.navigation-icon {
+  flex-shrink: 0;
+}
+.site-header nav a,
+.site-header button,
+.site-header .header-inquire {
+  transition: color 0.25s, background 0.25s, border-color 0.25s;
+}
+.site-header nav a:hover,
+.site-header nav a[aria-current],
+.site-header button:hover {
+  color: var(--champagne);
+}
+.site-header .header-inquire:hover,
+.site-header.on-hero:not(.scrolled) .header-inquire:hover {
+  color: var(--champagne);
+  background: #e8d9c512;
+}
+.site-header a:focus-visible,
+.site-header button:focus-visible {
+  outline: 2px solid var(--champagne);
+  outline-offset: 4px;
+}
+.mobile-nav nav a {
+  gap: 14px;
+  transition: color 0.25s;
+}
+.mobile-nav nav a:hover,
+.mobile-nav nav a[aria-current] {
+  color: var(--bronze);
 }
 .site-header .brand-type {
   font-size: 25px;
