@@ -4,8 +4,13 @@ import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Picture, Action, Heading, CTA } from "@/components/ui";
 import { Film } from "@/components/film";
 import { CameraMark } from "@/components/brand";
+import { pageMetadata } from "@/data/seo";
 import { stories, services } from "@/data/site";
-export const metadata: Metadata = { alternates: { canonical: "/" } };
+export const metadata: Metadata = pageMetadata(
+  "/",
+  "Wedding & Event Photography — Studio Demo",
+  "An editorial wedding, event and portrait photography studio concept by MSPixelPulse. Explore cinematic stock galleries and private demo inquiries.",
+);
 export default function Home() {
   return (
     <>
@@ -144,7 +149,7 @@ export default function Home() {
             }
             text="A quiet look. A dress in motion. The atmosphere of a room. Discover our cinematic point of view."
           />
-          <Action href="/portfolio#films" light>
+          <Action href="/portfolio?type=Film#discovery" light>
             Explore the film studies
           </Action>
         </div>

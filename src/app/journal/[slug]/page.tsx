@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { pageMetadata } from "@/data/seo";
 import { articles } from "@/data/site";
-import { PageIntro, Picture, CTA } from "@/components/ui";
+import { PageIntro, CTA } from "@/components/ui";
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
 }
@@ -13,13 +14,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const a = articles.find((a) => a.slug === slug);
-  return a
-    ? {
-        title: a.title,
-        description: a.intro,
-        alternates: { canonical: "/journal/" + slug },
-      }
-    : {};
+  return a ? pageMetadata("/journal/" + slug, a.title, a.intro) : {};
 }
 export default async function Article({
   params,
@@ -35,10 +30,8 @@ export default async function Article({
         eyebrow={a.category + " / 4 min read / Demo editorial"}
         title={a.title}
         text={a.intro}
+        image={a.image}
       />
-      <div className="article-image">
-        <Picture name={a.image} priority sizes="100vw" />
-      </div>
       <article className="section prose article-body">
         <p className="fine-print">
           Written for the AUREL FRAME fictional studio concept. Planning notes

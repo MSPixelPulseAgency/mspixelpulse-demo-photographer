@@ -1,0 +1,142 @@
+[
+  {
+    "path": "/",
+    "title": "Moments Become Masterpieces.",
+    "image": "romantic-outdoor-portrait",
+    "socialFocal": 0,
+    "socialLines": ["Moments Become", "Masterpieces."]
+  },
+  {
+    "path": "/portfolio",
+    "title": "Stories worth returning to.",
+    "image": "editorial-wedding-couple",
+    "socialFocal": 0.25,
+    "socialLines": ["Stories worth", "returning to."]
+  },
+  {
+    "path": "/services",
+    "title": "For life’s defining moments.",
+    "image": "garden-wedding-portrait",
+    "socialFocal": 0,
+    "socialLines": ["For life’s", "defining moments."]
+  },
+  {
+    "path": "/about",
+    "title": "An eye for light. A heart for stories.",
+    "image": "ari-fictional-photographer",
+    "socialFocal": 0,
+    "socialLines": ["An eye for light.", "A heart for stories."]
+  },
+  {
+    "path": "/experience",
+    "title": "A little planning. A lot of presence.",
+    "image": "outdoor-wedding-conversation",
+    "socialFocal": 0.3,
+    "socialLines": ["A little planning.", "A lot of presence."]
+  },
+  {
+    "path": "/investment",
+    "title": "For the things that stay.",
+    "image": "black-tie-wedding-portrait",
+    "socialFocal": 0.3,
+    "socialLines": ["For the things", "that stay."]
+  },
+  {
+    "path": "/journal",
+    "title": "The art of looking closer.",
+    "image": "timeless-wedding-details",
+    "socialFocal": 0.5,
+    "socialLines": ["The art of", "looking closer."]
+  },
+  {
+    "path": "/contact",
+    "title": "Let’s create something beautiful.",
+    "image": "intimate-wedding-portrait",
+    "socialFocal": 0.5,
+    "socialLines": ["Let’s create", "something beautiful."]
+  },
+  {
+    "path": "/privacy",
+    "title": "A clear, honest experience.",
+    "image": "woodland-wedding-ceremony",
+    "socialFocal": 0.5
+  },
+  {
+    "path": "/credits",
+    "title": "The artists behind the images.",
+    "image": "white-floral-table",
+    "socialFocal": 0.5
+  },
+  {
+    "path": "/portfolio/the-garden-edit",
+    "title": "The garden edit",
+    "image": "garden-wedding-portrait",
+    "socialFocal": 0
+  },
+  {
+    "path": "/portfolio/a-black-tie-affair",
+    "title": "A black-tie affair",
+    "image": "editorial-wedding-couple",
+    "socialFocal": 0.25
+  },
+  {
+    "path": "/portfolio/somewhere-by-the-sea",
+    "title": "Somewhere by the sea",
+    "image": "beach-wedding-vows",
+    "socialFocal": 0.5
+  },
+  {
+    "path": "/portfolio/the-art-of-gathering",
+    "title": "The art of gathering",
+    "image": "corporate-gala-hall",
+    "socialFocal": 0.5
+  },
+  {
+    "path": "/portfolio/little-things-big-feelings",
+    "title": "Little things, big feelings",
+    "image": "romantic-table-setting",
+    "socialFocal": 0.5
+  },
+  {
+    "path": "/portfolio/close-to-you",
+    "title": "Close to you",
+    "image": "engagement-embrace",
+    "socialFocal": 0.5
+  },
+  {
+    "path": "/journal/timeless-wedding-timeline",
+    "title": "A wedding timeline with room to feel.",
+    "image": "garden-wedding-portrait",
+    "socialFocal": 0
+  },
+  {
+    "path": "/journal/engagement-session-locations",
+    "title": "Somewhere that feels like you.",
+    "image": "engagement-embrace",
+    "socialFocal": 0.5
+  },
+  {
+    "path": "/journal/wedding-coverage-guide",
+    "title": "What full-day coverage really means.",
+    "image": "wedding-ceremony-hands",
+    "socialFocal": 0.5
+  },
+  {
+    "path": "/journal/editorial-portrait-preparation",
+    "title": "An editorial portrait, without the pressure.",
+    "image": "maternity-couple",
+    "socialFocal": 0.5
+  },
+  {
+    "path": "/journal/destination-photography-planning",
+    "title": "A celebration beyond the familiar.",
+    "image": "beach-wedding-vows",
+    "socialFocal": 0.5
+  },
+  {
+    "path": "/journal/corporate-event-photography",
+    "title": "Photographs that keep the conversation going.",
+    "image": "conference-audience",
+    "socialFocal": 0.5
+  }
+]

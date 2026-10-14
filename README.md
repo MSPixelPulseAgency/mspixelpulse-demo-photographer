@@ -26,7 +26,7 @@ Node 22–24. Data in `src/data`, reusable UI and client interactions in `src/co
 
 ## Pages & interactions
 
-Eight main pages; six themed portfolio detail pages; six original journal articles; privacy and photography credits; custom 404. Gallery category filters, native fullscreen dialog, arrow-key navigation, touch swipes, CAD/USD sample price selector, FAQ accordions, mobile dialog navigation and five user-initiated cinematic stock films with offscreen pause. Reduced-motion support, visible focus, semantic landmarks and responsive crops.
+Eight main pages; six themed portfolio detail pages; six original journal articles; privacy and photography credits; custom 404. Global instant search, combined category/style/media/content filters, shareable discovery URLs, stable sorting across Portfolio/Journal/Services/Investment, native fullscreen dialog, arrow-key navigation, touch swipes, CAD/USD sample price selector, FAQ accordions, mobile dialog navigation and five user-initiated cinematic stock films with offscreen pause. Reduced-motion support, visible focus, semantic landmarks and responsive crops.
 
 ## Assets
 
@@ -39,3 +39,9 @@ One existing-team Vercel project: `mspixelpulse-demo-photographer`, connected to
 ## Maintenance
 
 AI maintenance instructions are in `.ai-agents/`. Preserve demo disclosures, local-only form behavior, per-route SEO, gallery accessibility and the shared styling system. Do not edit other agency demo repositories.
+
+## Phase 3 discovery and sharing
+
+The compact glass header is 68px desktop / 64px compact, with 16.5px desktop navigation. Search is a lazy-loaded, keyboard-accessible native dialog over the actual site catalog; no provider or search history storage. Portfolio combines 6 collections, 64 frames and 5 licensed films. Only supported categories and visual styles appear; stock events have no verified country or season, so those controls are omitted. Newest/oldest refer to first catalog inclusion commits (`da5dfa8` / `1d2f48b`), never event dates. Price/coverage use configured sample values; custom destination coverage sorts last.
+
+PageHero/cover sources and 22 branded 1200×630 previews are maintained in `src/data/covers.json`. Run `node scripts/social-assets.mjs` and `node scripts/favicon-assets.mjs` to regenerate. Verify with `CHECK_URL=https://photographer.mspixelpulse.com node scripts/check-social.mjs`. Canonicals omit discovery query parameters. Standard Open Graph/Twitter metadata supports WhatsApp, iMessage, LinkedIn, Facebook and X; external apps control caching/display.

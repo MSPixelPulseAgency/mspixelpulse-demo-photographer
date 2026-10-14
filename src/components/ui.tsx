@@ -72,7 +72,7 @@ export function Heading({
     </div>
   );
 }
-export function PageIntro({
+export function PageHero({
   eyebrow,
   title,
   text,
@@ -97,7 +97,11 @@ export function PageIntro({
             priority
             sizes="(max-width: 800px) 86vw, 35vw"
           />
-          <span>THE AUREL FRAME EDIT / STOCK INSPIRATION</span>
+          <span>
+            {image === "ari-fictional-photographer"
+              ? "ARI / ORIGINAL GENERATED PORTRAIT / FICTIONAL STUDIO"
+              : "THE AUREL FRAME EDIT / STOCK INSPIRATION"}
+          </span>
         </div>
       )}
     </section>
@@ -119,3 +123,5 @@ export function CTA() {
     </section>
   );
 }
+
+export const PageIntro = PageHero;

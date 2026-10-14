@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageIntro, Heading, Picture, Action, CTA } from "@/components/ui";
-import { Gallery, FAQ, Pricing, Inquiry } from "@/components/interactions";
-import { stories, services, addons, steps, articles } from "@/data/site";
+import { FAQ, Pricing, Inquiry } from "@/components/interactions";
+import { addons, steps } from "@/data/site";
+import covers from "@/data/covers.json";
+import { pageMetadata } from "@/data/seo";
 import assets from "@/data/assets.json";
 import films from "@/data/films.json";
-import { Film, FilmCollection } from "@/components/film";
+import { Film } from "@/components/film";
+import PortfolioDiscovery from "@/components/portfolio-discovery";
+import JournalDiscovery from "@/components/journal-discovery";
+import ServiceDiscovery from "@/components/service-discovery";
 import { CameraMark } from "@/components/brand";
 const pages: Record<
   string,
@@ -77,18 +81,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { page } = await params;
   const p = pages[page];
-  return p
-    ? {
-        title: p.title,
-        description: p.description,
-        alternates: { canonical: "/" + page },
-        openGraph: {
-          title: p.title,
-          description: p.description,
-          url: "/" + page,
-        },
-      }
-    : {};
+  return p ? pageMetadata("/" + page, p.title, p.description) : {};
 }
 export default async function Page({
   params,
@@ -148,144 +141,29 @@ export default async function Page({
               p.heading
             )
           }
-          image={
+          image={covers.find((c) => c.path === "/" + page)?.image}
+          text={
             (
               {
-                portfolio: "editorial-wedding-couple",
-                services: "garden-wedding-portrait",
-                about: "wedding-hands-detail",
-                experience: "timeless-wedding-details",
-                investment: "rings-invitation",
-                journal: "engagement-embrace",
+                portfolio:
+                  "Emotion, atmosphere and light. Licensed stock collections, presented as visual inspiration.",
+                services:
+                  "For the celebration, the connection, and the moments between.",
+                about:
+                  "Meet Ari, the fictional creative voice behind a considered photographic perspective.",
+                experience:
+                  "From the first hello to the final frame. An illustrative photography journey.",
+                investment:
+                  "Considered collections for meaningful moments. Clearly marked sample prices.",
+                journal:
+                  "A little preparation. A fresh perspective. Notes for the moments ahead.",
               } as Record<string, string>
-            )[page]
-          }
-          text={
-            page === "portfolio"
-              ? "A considered collection of emotion, atmosphere and light. Illustrative stock mood boards, never represented as our client work."
-              : p.description
+            )[page] || p.description
           }
         />
       )}
-      {page === "portfolio" && (
-        <>
-          <section className="section story-grid portfolio-stories">
-            {stories.map((s) => (
-              <Link
-                prefetch={false}
-                href={"/portfolio/" + s.slug}
-                className="story-card focus-frame"
-                data-shutter="true"
-                key={s.slug}
-              >
-                <div className="image-wrap">
-                  <Picture name={s.cover} />
-                  <span className="focus-brackets" aria-hidden />
-                </div>
-                <span className="eyebrow">{s.category} / Stock editorial</span>
-                <h2>{s.title}</h2>
-                <p>{s.subtitle}</p>
-              </Link>
-            ))}
-          </section>
-          <section className="section gallery-collection">
-            <Heading
-              eyebrow="The complete visual edit"
-              title={
-                <>
-                  Explore every <em>frame.</em>
-                </>
-              }
-            />
-            <Gallery />
-          </section>
-          <section id="films" className="section film-library">
-            <Heading
-              eyebrow="Cinematography / licensed stock studies"
-              title={
-                <>
-                  The moving <em>image.</em>
-                </>
-              }
-            />
-            <FilmCollection />
-          </section>
-        </>
-      )}
-      {page === "services" && (
-        <section className="section services-full">
-          {services.map((s) => (
-            <article
-              id={"service-" + s.number}
-              className="service-detail reveal"
-              key={s.title}
-            >
-              {s.number === "05" ? (
-                <Film id="the-preparation" title="Before the first look" />
-              ) : (
-                <Picture name={s.image} />
-              )}
-              <div>
-                <span className="eyebrow">
-                  {s.number} / The signature offering
-                </span>
-                <h2>{s.title}</h2>
-                <p className="lead">{s.text}</p>
-                <ul>
-                  {s.options.map((o) => (
-                    <li key={o}>{o}</li>
-                  ))}
-                </ul>
-                <p>{s.benefit}</p>
-                <p className="fine-print">{s.deliverable}</p>
-                <Action>Inquire about {s.title.toLowerCase()}</Action>
-              </div>
-            </article>
-          ))}
-          <article id="service-06" className="service-detail reveal">
-            <Film
-              id="gathering-in-motion"
-              title="The atmosphere of an evening"
-            />
-            <div>
-              <span className="eyebrow">06 / Commercial videography</span>
-              <h2>
-                Stories for
-                <br />
-                <em>people & brands.</em>
-              </h2>
-              <p className="lead">
-                Considered films for a gathering, a launch or a new idea.
-              </p>
-              <ul>
-                <li>Corporate event highlights</li>
-                <li>Brand stories & product launches</li>
-                <li>Short social edits</li>
-              </ul>
-              <p>
-                Illustrative deliverables: a brief-led film, a highlight edit
-                and selected social cuts.
-              </p>
-              <Action>Explore a commercial film</Action>
-            </div>
-          </article>
-          <div className="add-ons">
-            <Heading
-              eyebrow="Make it yours"
-              title="A few thoughtful additions."
-            />
-            <ul>
-              {addons.map((a) => (
-                <li key={a}>{a}</li>
-              ))}
-            </ul>
-            <p className="fine-print">
-              All offerings are illustrative. Actual permissions, availability
-              and deliverables require a real agreement.
-            </p>
-          </div>
-        </section>
-      )}
+      {page === "portfolio" && <PortfolioDiscovery />}
+      {page === "services" && <ServiceDiscovery />}
       {page === "about" && (
         <>
           <section className="section studio-split">
@@ -464,28 +342,7 @@ export default async function Page({
           </div>
         </section>
       )}
-      {page === "journal" && (
-        <section className="section journal-grid">
-          {articles.map((a, i) => (
-            <Link
-              prefetch={false}
-              className="journal-card reveal"
-              href={"/journal/" + a.slug}
-              key={a.slug}
-            >
-              <div className="image-wrap">
-                <Picture name={a.image} />
-              </div>
-              <span className="eyebrow">
-                {a.category} / {i % 2 ? 4 : 3} min read
-              </span>
-              <h2>{a.title}</h2>
-              <p>{a.intro}</p>
-              <span className="text-link">Read the story ↗</span>
-            </Link>
-          ))}
-        </section>
-      )}
+      {page === "journal" && <JournalDiscovery />}
       {page === "contact" && (
         <section className="section contact-layout contact-edit">
           <aside>
@@ -499,8 +356,7 @@ export default async function Page({
                 something <em>beautiful.</em>
               </h1>
               <p>
-                Tell us about your story, your vision, and the moments you want
-                to remember.
+                Tell us about your story and the moments you want to remember.
               </p>
             </div>
             <div className="contact-photo">
