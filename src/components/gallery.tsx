@@ -5,15 +5,13 @@ import { gallery, categories } from "@/data/site";
 import { photo } from "@/data/media";
 import { Picture } from "./ui";
 import { FilmCollection } from "./film";
-export function Gallery({ names }: { names?: string[] }) {
-  const [category, setCategory] = useState("All");
+export function usePhotoViewer(
+  rows: { name: string; src: string; alt: string }[],
+) {
   const [index, setIndex] = useState<number | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const lastFocus = useRef<HTMLElement | null>(null);
   const touch = useRef(0);
-  const rows = names
-    ? names.map((n) => ({ ...photo(n), category: "Weddings" }))
-    : gallery.filter((p) => category === "All" || p.tags.includes(category));
   function close() {
     setIndex(null);
     dialog.current?.close();
@@ -33,59 +31,13 @@ export function Gallery({ names }: { names?: string[] }) {
       i === null ? null : (i + delta + rows.length) % rows.length,
     );
   }
-  return (
-    <div className="gallery-section">
-      {!names && (
-        <div className="filters" aria-label="Photography category">
-          {categories.map((c) => (
-            <button
-              key={c}
-              aria-pressed={category === c}
-              onClick={() => {
-                setCategory(c);
-                setIndex(null);
-              }}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
-      )}
-      {category === "Wedding Films" ? (
-        <FilmCollection />
-      ) : (
-        <>
-          <p className="gallery-note">
-            {rows.length} frames · Illustrative stock photography · Select an
-            image to explore
-          </p>
-          <div className="masonry">
-            {rows.map((p, i) => (
-              <button
-                key={p.name}
-                className="gallery-image"
-                onClick={(e) => {
-                  lastFocus.current = e.currentTarget;
-                  setIndex(i);
-                }}
-                aria-label={"View " + p.alt}
-              >
-                <Picture
-                  name={p.name}
-                  sizes="(max-width:600px) 43vw, (max-width:950px) 45vw, 28vw"
-                />
-                <span>
-                  {p.alt}
-                  <Plus size={19} />
-                </span>
-              </button>
-            ))}
-          </div>
-          {rows.length === 0 && (
-            <p>No frames in this edit yet. Explore another collection.</p>
-          )}
-        </>
-      )}
+  return {
+    open: (name: string, element: HTMLElement) => {
+      lastFocus.current = element;
+      const at = rows.findIndex((p) => p.name === name);
+      if (at >= 0) setIndex(at);
+    },
+    viewer: (
       <dialog
         className="lightbox glass-modal"
         aria-label="Photography fullscreen viewer"
@@ -130,6 +82,68 @@ export function Gallery({ names }: { names?: string[] }) {
           </>
         )}
       </dialog>
+    ),
+  };
+}
+
+export function Gallery({ names }: { names?: string[] }) {
+  const [category, setCategory] = useState("All");
+  const rows = names
+    ? names.map(photo)
+    : gallery.filter((p) => category === "All" || p.tags.includes(category));
+  const { open, viewer } = usePhotoViewer(rows);
+  return (
+    <div className="gallery-section">
+      {!names && (
+        <div className="filters" aria-label="Photography category">
+          {categories
+            .filter(
+              (c) =>
+                c === "All" ||
+                c === "Wedding Films" ||
+                gallery.some((p) => p.tags.includes(c)),
+            )
+            .map((c) => (
+              <button
+                key={c}
+                aria-pressed={category === c}
+                onClick={() => setCategory(c)}
+              >
+                {c}
+              </button>
+            ))}
+        </div>
+      )}
+      {category === "Wedding Films" ? (
+        <FilmCollection />
+      ) : (
+        <>
+          <p className="gallery-note">
+            {rows.length} frames · Illustrative stock photography · Select an
+            image to explore
+          </p>
+          <div className="masonry">
+            {rows.map((p) => (
+              <button
+                key={p.name}
+                className="gallery-image"
+                onClick={(e) => open(p.name, e.currentTarget)}
+                aria-label={"View " + p.alt}
+              >
+                <Picture
+                  name={p.name}
+                  sizes="(max-width:600px) 43vw, (max-width:950px) 45vw, 28vw"
+                />
+                <span>
+                  {p.alt}
+                  <Plus size={19} />
+                </span>
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+      {viewer}
     </div>
   );
 }

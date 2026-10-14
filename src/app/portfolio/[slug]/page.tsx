@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { pageMetadata } from "@/data/seo";
 import { stories } from "@/data/site";
 import { Picture, CTA } from "@/components/ui";
 import { Film } from "@/components/film";
@@ -16,13 +17,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const s = stories.find((s) => s.slug === slug);
   return s
-    ? {
-        title: s.title + " — Stock Editorial Collection",
-        description:
-          s.subtitle +
-          " An illustrative photography mood board by AUREL FRAME.",
-        alternates: { canonical: "/portfolio/" + slug },
-      }
+    ? pageMetadata(
+        "/portfolio/" + slug,
+        s.title + " — Stock Editorial Collection",
+        s.subtitle + " An illustrative photography mood board by AUREL FRAME.",
+      )
     : {};
 }
 export default async function Story({

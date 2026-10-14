@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
+import { DiscoveryUrlObserver } from "@/components/discovery-url-observer";
 import { Bodoni_Moda, DM_Sans } from "next/font/google";
 import Link from "next/link";
 import Navigation from "@/components/navigation";
@@ -6,6 +8,7 @@ import { Reveal } from "@/components/reveal";
 import { brand, nav } from "@/data/site";
 import "./globals.css";
 import { Brand } from "@/components/brand";
+import { pageMetadata } from "@/data/seo";
 import { CameraTransitions } from "@/components/camera-transitions";
 const serif = Bodoni_Moda({
   subsets: ["latin"],
@@ -27,14 +30,26 @@ export const metadata: Metadata = {
   },
   description:
     "An editorial wedding, event and portrait photography studio concept by MSPixelPulse. Explore cinematic stock galleries and a private demo inquiry experience.",
-  openGraph: {
-    title: "AUREL FRAME — Every Moment, Beautifully Remembered.",
-    description: "A fictional photography studio concept by MSPixelPulse.",
-    images: [{ url: "/social-preview.jpg", width: 1200, height: 630 }],
-  },
-  twitter: { card: "summary_large_image", images: ["/social-preview.jpg"] },
+  openGraph: pageMetadata(
+    "/",
+    "AUREL FRAME — Moments Become Masterpieces.",
+    "A fictional editorial photography and cinematography studio by MSPixelPulse.",
+  ).openGraph,
+  twitter: pageMetadata(
+    "/",
+    "AUREL FRAME — Moments Become Masterpieces.",
+    "A fictional editorial photography and cinematography studio by MSPixelPulse.",
+  ).twitter,
   robots: { index: true, follow: true },
-  icons: { icon: "/icon.svg", apple: "/apple-touch-icon.png" },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 export default function RootLayout({
   children,
@@ -83,7 +98,7 @@ export default function RootLayout({
                 <Link prefetch={false} href="/portfolio">
                   Wedding stories
                 </Link>
-                <Link prefetch={false} href="/portfolio#films">
+                <Link prefetch={false} href="/portfolio?type=Film#discovery">
                   Film studies
                 </Link>
                 <Link prefetch={false} href="/services">
@@ -114,6 +129,9 @@ export default function RootLayout({
             or availability are represented.
           </p>
         </footer>
+        <Suspense fallback={null}>
+          <DiscoveryUrlObserver />
+        </Suspense>
         <Reveal />
         <CameraTransitions />
       </body>

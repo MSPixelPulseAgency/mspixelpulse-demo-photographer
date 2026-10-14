@@ -143,7 +143,7 @@ export function Inquiry() {
           "Family",
           "Other",
         ])}
-        {field("date", "Event date", "date")}
+        {field("date", "Preferred date", "date")}
         {field("location", "Event location")}
         {select("country", "Country", [
           "Canada",

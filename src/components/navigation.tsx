@@ -2,11 +2,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, Search } from "lucide-react";
 import { Brand } from "./brand";
+import dynamic from "next/dynamic";
+const SearchOverlay = dynamic(() => import("./search-overlay"), { ssr: false });
 import { nav } from "@/data/navigation";
 export default function Navigation() {
   const path = usePathname();
+  const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 80);
@@ -59,6 +62,15 @@ export default function Navigation() {
             </Link>
           ))}
         </nav>
+        <button
+          className="header-search"
+          aria-label="Open search"
+          aria-haspopup="dialog"
+          aria-expanded={searchOpen}
+          onClick={() => setSearchOpen(true)}
+        >
+          <Search size={20} />
+        </button>
         <Link prefetch={false} href="/contact" className="header-inquire">
           Inquire <ArrowUpRight size={15} />
         </Link>
@@ -73,6 +85,7 @@ export default function Navigation() {
           <Menu />
         </button>
       </header>
+      {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
       <dialog
         ref={dialog}
         id="mobile-navigation"
