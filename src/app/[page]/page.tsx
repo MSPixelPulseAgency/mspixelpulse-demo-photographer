@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageIntro, Heading, Picture, Action, CTA } from "@/components/ui";
 import { FAQ, Pricing, Inquiry } from "@/components/interactions";
-import { addons, steps } from "@/data/site";
+import { steps } from "@/data/site";
+import { Addons } from "@/components/addons";
 import covers from "@/data/covers.json";
 import { pageMetadata } from "@/data/seo";
 import assets from "@/data/assets.json";
@@ -330,11 +331,7 @@ export default async function Page({
               eyebrow="A little more possibility"
               title="Tailor the collection."
             />
-            <ul>
-              {addons.map((a) => (
-                <li key={a}>{a}</li>
-              ))}
-            </ul>
+            <Addons />
             <p>
               Every real celebration deserves a tailored quote. These sample
               prices demonstrate the presentation only.
@@ -396,6 +393,14 @@ export default async function Page({
             network submission, sends no emails, collects no payments and stores
             no details in a database, cookie or browser storage. A successful
             demo clears the fields. No appointment or booking is confirmed.
+          </p>
+          <h2>Your currency preference.</h2>
+          <p>
+            Only your selected display currency (CAD or USD) is saved in browser
+            localStorage. It stays on your device and can be removed by clearing
+            site data. If browser storage is unavailable, switching still works
+            for the current visit. Inquiry details and search history are never
+            saved.
           </p>
           <h2>Hosting and external links.</h2>
           <p>

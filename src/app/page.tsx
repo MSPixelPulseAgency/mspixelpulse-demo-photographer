@@ -5,6 +5,8 @@ import { Picture, Action, Heading, CTA } from "@/components/ui";
 import { Film } from "@/components/film";
 import { CameraMark } from "@/components/brand";
 import { pageMetadata } from "@/data/seo";
+import { HomePricing } from "@/components/home-pricing";
+import { Testimonials } from "@/components/testimonials";
 import { stories, services } from "@/data/site";
 export const metadata: Metadata = pageMetadata(
   "/",
@@ -291,15 +293,8 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="testimonial section reveal">
-        <span className="eyebrow">A note on the creative philosophy</span>
-        <blockquote>
-          “The most meaningful frame
-          <br />
-          is the one that makes you <em>feel.</em>”
-        </blockquote>
-        <span>The AUREL FRAME studio concept</span>
-      </section>
+      <HomePricing />
+      <Testimonials />
       <section className="section destination-edit">
         <div>
           <span className="eyebrow">Beyond the familiar</span>

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { X, Search, ArrowUpRight } from "lucide-react";
 import { searchIndex } from "@/data/discovery";
+import { Price } from "./currency";
 import {
   normalize,
   searchContent,
@@ -171,6 +172,16 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
                 <h3>
                   <MatchingText text={r.title} query={query} />
                 </h3>
+                {r.priceId && (
+                  <span className="search-result-price">
+                    Starting at{" "}
+                    <Price
+                      id={r.priceId}
+                      multiplier={r.priceMultiplier}
+                      hourly={r.kind === "Service"}
+                    />
+                  </span>
+                )}
                 <p>
                   <MatchingText text={excerpt(r.description)} query={query} />
                 </p>

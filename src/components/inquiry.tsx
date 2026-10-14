@@ -4,8 +4,11 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { validateInquiry } from "@/data/inquiry";
 import { CameraMark } from "./brand";
+import { useCurrency } from "./currency";
+import { budgetOptions } from "@/data/pricing";
 import { Action } from "./ui";
 export function Inquiry() {
+  const { currency } = useCurrency();
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [success, setSuccess] = useState(false);
   const form = useRef<HTMLFormElement>(null);
@@ -70,7 +73,11 @@ export function Inquiry() {
       </label>
     );
   }
-  function select(name: string, label: string, options: string[]) {
+  function select(
+    name: string,
+    label: string,
+    options: (string | { value: string; label: string })[],
+  ) {
     return (
       <label className="field" key={name}>
         {label}
@@ -85,7 +92,12 @@ export function Inquiry() {
             Select an option
           </option>
           {options.map((o) => (
-            <option key={o}>{o}</option>
+            <option
+              key={typeof o === "string" ? o : o.value}
+              value={typeof o === "string" ? o : o.value}
+            >
+              {typeof o === "string" ? o : o.label}
+            </option>
           ))}
         </select>
         {errors[name] && (
@@ -150,14 +162,7 @@ export function Inquiry() {
           "United States",
           "Other destination",
         ])}
-        {select("budget", "Estimated budget", [
-          "Under $1,000",
-          "$1,000–$3,000",
-          "$3,000–$5,000",
-          "$5,000–$8,000",
-          "$8,000+",
-          "Let’s explore options",
-        ])}
+        {select("budget", "Estimated budget", budgetOptions(currency))}
         {select("services", "Interested services", [
           "Photography",
           "Photography + film",

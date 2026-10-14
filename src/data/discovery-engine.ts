@@ -16,6 +16,8 @@ export type ContentItem = {
   photoName?: string;
   filmId?: string;
   price?: number;
+  priceId?: import("./pricing").PriceId;
+  priceMultiplier?: number;
   coverage?: number;
 };
 export const filterKeys = [

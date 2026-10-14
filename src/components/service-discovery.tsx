@@ -1,4 +1,6 @@
 "use client";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { services } from "@/data/site";
 import { serviceItems } from "@/data/discovery";
 import { discover } from "@/data/discovery-engine";
@@ -10,6 +12,8 @@ import {
 } from "./discovery-controls";
 import { Picture, Action } from "./ui";
 import { Film } from "./film";
+import { servicePricing, pricingCatalog } from "@/data/pricing";
+import { Price, PricingNotice } from "./currency";
 const sorts = [
   ["featured", "Featured"],
   ["category", "Category"],
@@ -20,6 +24,7 @@ export default function ServiceDiscovery() {
     rows = discover(serviceItems, state);
   return (
     <section className="section services-full">
+      <PricingNotice />
       <DiscoveryControls
         items={serviceItems}
         state={state}
@@ -51,6 +56,28 @@ export default function ServiceDiscovery() {
               <p className="lead">
                 {s?.text || "Motion with a purpose. Stories made to connect."}
               </p>
+              <p className="service-price-badge">
+                {servicePricing[r.id].primary ? (
+                  <>
+                    Starting at{" "}
+                    <Price id={servicePricing[r.id].primary!} hourly />
+                  </>
+                ) : (
+                  "Custom Quote"
+                )}
+              </p>
+              {!!servicePricing[r.id].rates.length && (
+                <dl className="service-rate-list">
+                  {servicePricing[r.id].rates.map((id) => (
+                    <div key={id}>
+                      <dt>{pricingCatalog[id].title}</dt>
+                      <dd>
+                        <Price id={id} hourly />
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
               <ul>
                 {(
                   s?.options || [
@@ -73,6 +100,13 @@ export default function ServiceDiscovery() {
               <Action href={"/contact?service=" + encodeURIComponent(r.title)}>
                 Inquire about this service
               </Action>
+              <Link
+                prefetch={false}
+                className="service-collections-link"
+                href="/investment"
+              >
+                Explore collections <ArrowUpRight size={17} aria-hidden />
+              </Link>
             </div>
           </article>
         );
