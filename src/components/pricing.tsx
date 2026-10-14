@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { Check } from "lucide-react";
 import { packages } from "@/data/site";
 import { packageItems, packageImages } from "@/data/discovery";
@@ -19,13 +18,16 @@ const sorts = [
 ];
 import { Picture } from "./ui";
 import { Action } from "./ui";
+import { useCurrency, CurrencySwitch, Price, PricingNotice } from "./currency";
+import { amountFor } from "@/data/pricing";
+import { Addons } from "./addons";
 export function Pricing() {
-  const [currency, setCurrency] = useState<"CAD" | "USD">("CAD");
+  const { currency } = useCurrency();
   const { state, update, reset } = useDiscovery(packageItems, sorts);
   const rows = discover(
     packageItems.map((r, i) => ({
       ...r,
-      price: currency === "CAD" ? packages[i].cad : packages[i].usd,
+      price: amountFor(packages[i].priceId, currency, packages[i].multiplier),
     })),
     state,
   );
@@ -33,22 +35,9 @@ export function Pricing() {
     <>
       <div className="currency-row">
         <p>Illustrative collections. No real quotes or payments.</p>
-        <div className="currency-switch" aria-label="Display currency">
-          {(["CAD", "USD"] as const).map((c) => (
-            <button
-              key={c}
-              onClick={() => setCurrency(c)}
-              aria-pressed={currency === c}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
+        <CurrencySwitch />
       </div>
-      <p className="fine-print">
-        CAD and USD are separately configured sample prices, not a live exchange
-        rate. Taxes and destination travel are excluded.
-      </p>
+      <PricingNotice />
       <DiscoveryControls
         items={packageItems}
         state={state}
@@ -58,16 +47,17 @@ export function Pricing() {
         label="Search collections"
       />
       <ResultCounter count={rows.length} />
-      <div className="pricing-grid">
+      <div className="pricing-grid" id="investment-collections">
         {rows.map((r) => {
           const i = packageItems.findIndex((p) => p.id === r.id),
             p = packages[i];
           return (
             <article
-              className={`pricing-card ${i === 3 ? "signature" : ""}`}
+              className={`pricing-card ${p.id === "signature" ? "signature" : ""}`}
               key={p.title}
+              data-package-id={p.id}
             >
-              {i === 3 && (
+              {p.id === "signature" && (
                 <span className="collection-tag">The signature collection</span>
               )}
               <Picture name={packageImages[i]} className="collection-image" />
@@ -75,11 +65,12 @@ export function Pricing() {
                 0{i + 1} / {p.tag}
               </span>
               <h2>{p.title}</h2>
+              <span className="price-caption">Starting at</span>
               <p className="price">
-                ${(currency === "CAD" ? p.cad : p.usd).toLocaleString()}{" "}
-                <small>{currency}</small>
+                <Price id={p.priceId} multiplier={p.multiplier} />
               </p>
               <span className="fine-print">Illustrative starting price</span>
+              <p className="coverage-duration">{p.duration}</p>
               <ul>
                 {p.items.map((item) => (
                   <li key={item}>
@@ -88,8 +79,12 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
+              <details className="package-addons">
+                <summary>Optional additions</summary>
+                <Addons ids={p.addons} />
+              </details>
               <Action href={"/contact?service=" + encodeURIComponent(p.title)}>
-                Explore this collection
+                Inquire about this collection
               </Action>
             </article>
           );

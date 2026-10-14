@@ -1,5 +1,6 @@
 import { gallery, stories, services, packages, articles } from "./site";
 import films from "./films.json";
+import { amountFor, servicePricing, pricingCatalog } from "./pricing";
 import { photo } from "./media";
 import type { ContentItem } from "./discovery-engine";
 // Actual first source publication times from da5dfa8 and 1d2f48b. These are website
@@ -21,16 +22,7 @@ const item = (
   publishedAt: originalPublished,
   ...p,
 });
-export const packageImages = [
-  "maternity-couple",
-  "engagement-embrace",
-  "intimate-wedding-portrait",
-  "editorial-wedding-couple",
-  "black-tie-wedding-portrait",
-  "beach-wedding-vows",
-  "corporate-toast",
-  "wedding-ceremony-hands",
-];
+export const packageImages = packages.map((p) => p.image);
 export const serviceCategories = [
   "Weddings",
   "Engagements",
@@ -145,7 +137,13 @@ export const serviceItems = services.map((s, i) =>
     kind: "Service",
     category: serviceCategories[i],
     categories: [serviceCategories[i]],
-    tags: s.options,
+    tags: [
+      ...s.options,
+      ...servicePricing["service-" + s.number].rates.map(
+        (id) => pricingCatalog[id].title,
+      ),
+    ],
+    priceId: servicePricing["service-" + s.number].primary,
     featured: i,
     media: i === 4 ? "Videography" : "Photography",
   }),
@@ -165,32 +163,23 @@ serviceItems.push(
     featured: 5,
   }),
 );
-const packageTypes = [
-  "Portraits",
-  "Engagements",
-  "Weddings",
-  "Weddings",
-  "Weddings",
-  "Destination Weddings",
-  "Corporate Events",
-  "Wedding Films",
-];
-const coverage = [60, 90, 240, 480, 600, undefined, 180, 480];
 export const packageItems = packages.map((p, i) =>
   item({
     id: "package-" + i,
     title: p.title,
-    description: [p.tag, ...p.items].join(" "),
+    description: [p.tag, p.duration, ...p.items].join(" "),
     href: "/investment?q=" + encodeURIComponent(p.title),
     image: photo(packageImages[i]).src,
     kind: "Package",
-    category: packageTypes[i],
-    categories: [packageTypes[i]],
-    tags: p.items,
+    category: p.category,
+    categories: [p.category],
+    tags: [...p.items, ...(p.aliases ?? [])],
     media: i === 7 ? "Photo + Film" : "Photography",
     featured: i,
-    price: p.cad,
-    coverage: coverage[i],
+    price: amountFor(p.priceId, "CAD", p.multiplier),
+    priceId: p.priceId,
+    priceMultiplier: p.multiplier,
+    coverage: p.coverage,
   }),
 );
 export const articleItems = articles.map((a, i) =>

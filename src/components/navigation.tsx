@@ -17,6 +17,7 @@ import {
   MessageCircle,
   type LucideIcon,
 } from "lucide-react";
+import { CurrencySelector } from "./currency";
 import { Brand } from "./brand";
 import dynamic from "next/dynamic";
 const SearchOverlay = dynamic(() => import("./search-overlay"), { ssr: false });
@@ -107,8 +108,10 @@ export default function Navigation() {
         >
           <Search size={18} strokeWidth={1.8} aria-hidden="true" />
         </button>
+        <CurrencySelector />
         <Link prefetch={false} href="/contact" className="header-inquire">
-          Inquire <ArrowUpRight size={17} strokeWidth={1.8} aria-hidden="true" />
+          Inquire{" "}
+          <ArrowUpRight size={17} strokeWidth={1.8} aria-hidden="true" />
         </Link>
         <button
           className="menu-trigger"
@@ -137,6 +140,7 @@ export default function Navigation() {
             <X />
           </button>
         </div>
+        <CurrencySelector variant="drawer" />
         <nav aria-label="Mobile navigation">
           {nav.map((n, i) => (
             <Link
@@ -145,7 +149,11 @@ export default function Navigation() {
               href={i === 0 ? "/" : "/" + n.toLowerCase()}
               onClick={close}
               aria-current={
-                (i === 0 ? path === "/" : path.startsWith("/" + n.toLowerCase()))
+                (
+                  i === 0
+                    ? path === "/"
+                    : path.startsWith("/" + n.toLowerCase())
+                )
                   ? "page"
                   : undefined
               }
