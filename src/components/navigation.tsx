@@ -2,11 +2,46 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, ArrowUpRight, Search } from "lucide-react";
+import {
+  Menu,
+  X,
+  ArrowUpRight,
+  Search,
+  Images,
+  Camera,
+  UserRound,
+  Sparkles,
+  Diamond,
+  BookOpen,
+  House,
+  MessageCircle,
+  type LucideIcon,
+} from "lucide-react";
 import { Brand } from "./brand";
 import dynamic from "next/dynamic";
 const SearchOverlay = dynamic(() => import("./search-overlay"), { ssr: false });
 import { nav } from "@/data/navigation";
+const navigationIcons: Record<string, LucideIcon> = {
+  Home: House,
+  Portfolio: Images,
+  Services: Camera,
+  About: UserRound,
+  Experience: Sparkles,
+  Investment: Diamond,
+  Journal: BookOpen,
+  Contact: MessageCircle,
+};
+function NavigationIcon({ label }: { label: string }) {
+  const Icon = navigationIcons[label];
+  return (
+    <Icon
+      className="navigation-icon"
+      size={17}
+      strokeWidth={1.8}
+      aria-hidden="true"
+    />
+  );
+}
 export default function Navigation() {
   const path = usePathname();
   const [searchOpen, setSearchOpen] = useState(false);
@@ -58,6 +93,7 @@ export default function Navigation() {
                 path.startsWith("/" + n.toLowerCase()) ? "page" : undefined
               }
             >
+              <NavigationIcon label={n} />
               {n}
             </Link>
           ))}
@@ -69,10 +105,10 @@ export default function Navigation() {
           aria-expanded={searchOpen}
           onClick={() => setSearchOpen(true)}
         >
-          <Search size={20} />
+          <Search size={18} strokeWidth={1.8} aria-hidden="true" />
         </button>
         <Link prefetch={false} href="/contact" className="header-inquire">
-          Inquire <ArrowUpRight size={15} />
+          Inquire <ArrowUpRight size={17} strokeWidth={1.8} aria-hidden="true" />
         </Link>
         <button
           className="menu-trigger"
@@ -108,8 +144,13 @@ export default function Navigation() {
               key={n}
               href={i === 0 ? "/" : "/" + n.toLowerCase()}
               onClick={close}
+              aria-current={
+                (i === 0 ? path === "/" : path.startsWith("/" + n.toLowerCase()))
+                  ? "page"
+                  : undefined
+              }
             >
-              <small>0{i + 1}</small>
+              <NavigationIcon label={n} />
               {n}
             </Link>
           ))}
